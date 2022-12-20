@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Document</title>
+  <title>Интернет магазин Simple-food</title>
 </head>
 
 <body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapp">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.svg" alt="Логотип ИМ Simple-food">
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Блюда</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="userbar">
+          <li class="userbar__item">
+            <a class="userbar__link userbar__icon--src" href="#"></a>
+          </li>
+          <li class="userbar__item">
+            <a class="userbar__link userbar__link--cart" href="#">
+              <span class="userbar__num">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__wrapp">
+        <div class="hero__content">
+          <h1 class="sr-only">Интернет магазин еды - быстрая доставка</h1>
+          <h2 class="hero__title">Доставка <span>за 15 минут</span></h2>
+          <p class="hero__text">Самый быстрый сервис доставки еды в вашем городе. Не уложимся в срок - доставка за наш
+            счёт</p>
+          <button class="hero__btn btn" type="button">Заказать</button>
+          <a class="hero__link" href="#">Подробнее</a>
+        </div>
+        <img class="hero__img" src="images/scooter-guy.png" alt="Мультяшное фото доставщика еды "></img>
+      </div>
+    </div>
+  </section>
 
-  
   <script src="js/main.min.js"></script>
 </body>
 

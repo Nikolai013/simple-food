@@ -3,5 +3,115 @@
 @import  'reset';
 @import  'global';
 
+.header{
+  padding: 60px 0;
+  &__wrapp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo{
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin-right: auto;
+}
+
+.logo:hover{
+  opacity: 0.8
+}
+
+.logo:active{
+  opacity: 0.5;
+}
+
+.nav{
+  margin-right: 38px;
+  
+  &__list{
+    display: flex;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 45px;
+  }
+
+  &__link{
+    color: #31352B;
+    line-height: 21px;
+    transition: text-shadow 0.5s color 0.5s;
+  }
+  
+  &__link:hover{
+    color: $orange-900;
+  }
+
+  &__link:active{
+    color: $dark;
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  }
+
+}
+
+.userbar {
+  display: flex;
+
+  &__item:not(:last-child){
+    margin-right: 10px;
+  }
+
+  &__link{
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+  }
+  
+  &__link::before{
+    position: absolute;
+    content: '';
+    width: 19px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  &__icon--src::before{
+    height: 19px;
+    background-image: url('../images/icons/Search-btn.svg');
+  }
+  
+  &__link--cart::before{
+    height: 18px;
+    background-image: url('../images/icons/buy-btn.svg');
+  }
+
+  &__num{
+    position: absolute;
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: $orange-900;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    top: 7px;
+    right: 5px;
+    color: #FFFFFF;
+  }
+}
+
+.hero__wrapp {
+  display: flex;
+  align-items: center;
+}
 
 @import  'media';
