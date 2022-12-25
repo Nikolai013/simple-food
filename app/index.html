@@ -63,7 +63,7 @@
   </header>
 
   <main class="main">
-    
+
     <section class="hero section">
       <div class="container">
         <div class="hero__wrapp">
@@ -86,28 +86,43 @@
         <ul class="popular__filter">
           <li class="popular__item-btn">
             <button class="popular__btn" type="button" data-filter="all">
-              <svg class="icon-fb">
-                <use xlink:href="#burger"></use>
+              <svg class="popular__icon">
+                <use xlink:href="../images/sprite.svg#burger"></use>
               </svg>
               Бургеры
             </button>
           </li>
           <li class="popular__item-btn">
-            <button class="popular__btn" type="button" data-filter=".pizza"
-              style="background-image: url('../images/sprite.svg#pizza')">Пицца</button>
+            <button class="popular__btn" type="button" data-filter=".pizza">
+              <svg class="popular__icon">
+                <use xlink:href="../images/sprite.svg#pizza"></use>
+              </svg>
+              Пицца
+            </button>
           </li>
           <li class="popular__item-btn">
-            <button class="popular__btn" type="button" data-filter=".sandwiches"
-              style="background-image: url('../images/sprite.svg#sandwich')">Сендвичи</button>
+            <button class="popular__btn" type="button" data-filter=".sandwiches">
+              <svg class="popular__icon">
+                <use xlink:href="../images/sprite.svg#sandwich"></use>
+              </svg>
+              Сендвичи
+            </button>
           </li>
           <li class="popular__item-btn">
-            <button class="popular__btn" type="button" data-filter=".asian-food"
-              style="background-image: url('../images/sprite.svg#asia')">Азиатская
-              кухня</button>
+            <button class="popular__btn" type="button" data-filter=".asian-food">
+              <svg class="popular__icon">
+                <use xlink:href="../images/sprite.svg#asia"></use>
+              </svg>
+              Азиатская кухня
+            </button>
           </li>
           <li class="popular__item-btn">
-            <button class="popular__btn" type="button" data-filter=".set-menu"
-              style="background-image: url('../images/sprite.svg#dish')">Cеты</button>
+            <button class="popular__btn" type="button" data-filter=".set-menu">
+              <svg class="popular__icon">
+                <use xlink:href="../images/sprite.svg#dish"></use>
+              </svg>
+              Cеты
+            </button>
           </li>
         </ul>
         <ul class="popular__content">
@@ -187,7 +202,12 @@
           </a>
           <form class="form" action="#">
             <input class="form__input" type="email" placeholder="Ваш email" required>
-            <button class="form__btn btn" type="submit">Подписаться</button>
+            <button class="form__btn btn" type="submit">
+              <svg class="form__icon">
+                <use xlink:href="../images/sprite.svg#ic-plane"></use>
+              </svg>
+              Подписаться
+            </button>
           </form>
         </div>
         <div class="footer-top__block-nav">
