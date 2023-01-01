@@ -1,4 +1,10 @@
-const { src, dest, watch, parallel, series } = require('gulp');
+const {
+  src,
+  dest,
+  watch,
+  parallel,
+  series
+} = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
@@ -24,7 +30,9 @@ function browsersync() {
 //-- Функции для стилей
 function styles() {
   return src('app/scss/style.scss')
-    .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(scss({
+      outputStyle: 'compressed'
+    }))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
@@ -37,10 +45,11 @@ function styles() {
 //-- Функции для скриптов
 function scripts() {
   return src([
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/mixitup/dist/mixitup.js',
-    'app/js/main.js'
-  ])
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
+      'node_modules/mixitup/dist/mixitup.js',
+      'app/js/main.js'
+    ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
@@ -52,13 +61,23 @@ function scripts() {
 function images() {
   return src('app/images/**/*.*')
     .pipe(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.gifsicle({
+        interlaced: true
+      }),
+      imagemin.mozjpeg({
+        quality: 80,
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 5
+      }),
       imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
+        plugins: [{
+            removeViewBox: true
+          },
+          {
+            cleanupIDs: false
+          }
         ]
       })
     ]))
@@ -73,9 +92,10 @@ function svgSprites() {
         $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
         $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
       },
-      parserOptions: { xmlMode: true },
-    })
-    )
+      parserOptions: {
+        xmlMode: true
+      },
+    }))
     .pipe(replace('&gt;', '>')) // боремся с заменой символа
     .pipe(
       svgSprite({
@@ -91,10 +111,12 @@ function svgSprites() {
 
 function build() {
   return src([
-    'app/**/*.html',
-    'app/css/style.min.css',
-    'app/js/main.min.js'
-  ], { base: 'app' })
+      'app/**/*.html',
+      'app/css/style.min.css',
+      'app/js/main.min.js'
+    ], {
+      base: 'app'
+    })
     .pipe(dest('dist'))
 }
 
@@ -119,4 +141,3 @@ exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
-
