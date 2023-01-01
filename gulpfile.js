@@ -85,28 +85,26 @@ function images() {
 }
 
 function svgSprites() {
-  return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
-    .pipe(cheerio({
-      run: ($) => {
-        $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
-        $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
-        $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
-      },
-      parserOptions: {
-        xmlMode: true
-      },
-    }))
-    .pipe(replace('&gt;', '>')) // боремся с заменой символа
-    .pipe(
-      svgSprite({
-        mode: {
-          stack: {
-            sprite: '../sprite.svg', // указываем имя файла спрайта и путь
-          },
+  return src('app/images/icons/*.svg')
+  .pipe(cheerio({
+        run: ($) => {
+            $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
+            $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+            $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
         },
+        parserOptions: { xmlMode: true },
       })
-    )
-    .pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+  )
+	.pipe(
+        svgSprite({
+          mode: {
+            stack: {
+              sprite: '../sprite.svg',
+            },
+          },
+        })
+      )
+	.pipe(dest('app/images'));
 }
 
 function build() {
