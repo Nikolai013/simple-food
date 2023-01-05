@@ -423,7 +423,7 @@
     position: absolute;
     content: "";
     background-color: #ff2222;
-    mask-size: contain;
+    mask-size: cover;
     mask-position: center;
     mask-repeat: no-repeat;
     width: 34px;
@@ -505,7 +505,7 @@
       background-image: url("../images/sprite.svg#icon-timer-little");
       background-position: center;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       width: 19px;
       height: 20px;
       left: 0;
@@ -557,7 +557,7 @@
       content: "";
       background-color: #fff;
       mask-image: url("../images/sprite.svg#icon-arrow-right");
-      mask-size: contain;
+      mask-size: cover;
       mask-position: center;
       mask-repeat: no-repeat;
       width: 14px;
@@ -861,7 +861,6 @@
     height: 39px;
     mask-position: center;
     mask-repeat: no-repeat;
-    mask-size: 21px;
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
