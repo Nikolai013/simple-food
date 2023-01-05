@@ -147,6 +147,18 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: calc(100vh - 129px);
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: rgb(249, 250, 255);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      z-index: -1;
+    }
   }
 
   &__content {
@@ -736,11 +748,6 @@
     align-items: center;
   }
 }
-
-
-
-
-
 
 .app {
   &__wrapp {

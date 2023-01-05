@@ -88,13 +88,14 @@ function svgSprites() {
   return src('app/images/icons/*.svg')
   .pipe(cheerio({
         run: ($) => {
-            $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
-            $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
-            $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
+            $("[fill]").removeAttr("fill");
+            $("[stroke]").removeAttr("stroke");
+            $("[style]").removeAttr("style");
         },
         parserOptions: { xmlMode: true },
       })
   )
+	.pipe(replace('&gt;','>')) // боремся с заменой символа 
 	.pipe(
         svgSprite({
           mode: {
