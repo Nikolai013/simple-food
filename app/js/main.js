@@ -9,6 +9,7 @@ $(function () {
     autoplaySpeed: 2000,
     infinite: false
   })
+  
   $('.nav__link').click(function(){
     if($(this).hasClass('active')){
         return false;
@@ -16,6 +17,39 @@ $(function () {
     $('.nav__link').removeClass('active');
     $(this).addClass('active');
   });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+	const burger = document.querySelector(".burger");
+	burger.addEventListener("click", () => {
+		burger.classList.toggle("burger--active");
+	});
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+	const burger = document.querySelector(".burger");
+	const mobileMenu = document.querySelector(".nav-mobile");
+	const bodyLock = document.querySelector("body");
+
+	burger.addEventListener("click", () => {
+		mobileMenu.classList.toggle("nav--active");
+		if (mobileMenu.classList.contains("nav--active")) {
+			burger.classList.add("burger--active");
+			bodyLock.classList.add("lock");
+		} else {
+			burger.classList.remove("burger--active");
+			bodyLock.classList.remove("lock");
+		}
+	});
+});
+
+document.addEventListener("click", function (e) {
+	if (e.target !== burger && e.target !== mobileMenu) {
+		burger.classList.remove("burger--active");
+		mobileMenu.classList.remove("nav--active");
+		bodyLock.classList.remove("lock");
+  };
 });
 
 var mixer = mixitup('.popular__content');

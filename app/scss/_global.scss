@@ -80,6 +80,9 @@ body {
 
 .section {
 	padding: 60px 0;
+  @include mq('tablet-2'){
+    padding: 40px 0;
+  }
 }
 
 .title {

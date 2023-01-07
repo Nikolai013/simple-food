@@ -5,6 +5,18 @@ $gray: #c2c2c2;
 $darkBlue-900: #363853;
 $dark: #31352b;
 
+$breakpoints: (
+	"phone": 560px,
+	"tablet": 768px,
+	"tablet-2": 992px,
+	"desktop": 1230px,
+);
+
+$burgerWidth: 30px;
+$burgerHeight: 20px;
+$burgerLineHeight: 2px;
+$burgerColor: #363853;
+
 %rubik-300 {
 	font-family: "Rubik", sans-serif;
 	font-weight: 300;
