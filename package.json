@@ -24,6 +24,11 @@
     "jquery": "^3.6.3",
     "mixitup": "^3.3.1",
     "sass": "^1.57.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stylelint-config-standard": "^29.0.0",
+    "swiper": "^8.4.5"
+  },
+  "dependencies": {
+    "stylelint": "^14.16.1"
   }
 }

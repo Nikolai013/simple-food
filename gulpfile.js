@@ -16,7 +16,6 @@ const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 
-
 //-- Обновление браузера
 function browsersync() {
   browserSync.init({
@@ -45,15 +44,16 @@ function styles() {
 //-- Функции для скриптов
 function scripts() {
   return src([
-      'node_modules/jquery/dist/jquery.js',
-      'node_modules/slick-carousel/slick/slick.js',
-      'node_modules/mixitup/dist/mixitup.js',
-      'app/js/main.js'
-    ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+		"node_modules/jquery/dist/jquery.js",
+		"node_modules/slick-carousel/slick/slick.js",
+		"node_modules/swiper/swiper-bundle.min.js",
+		"node_modules/mixitup/dist/mixitup.js",
+		"app/js/main.js",
+	])
+		.pipe(concat("main.min.js"))
+		.pipe(uglify())
+		.pipe(dest("app/js"))
+		.pipe(browserSync.stream());
 }
 
 
@@ -95,7 +95,7 @@ function svgSprites() {
         parserOptions: { xmlMode: true },
       })
   )
-	.pipe(replace('&gt;','>')) // боремся с заменой символа 
+	.pipe(replace('&gt;','>')) // боремся с заменой символа
 	.pipe(
         svgSprite({
           mode: {
