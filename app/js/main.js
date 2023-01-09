@@ -9,8 +9,18 @@ $(function () {
 		appendArrows: ".reviews__slider-control",
 		appendDots: ".reviews__dots",
 		autoplaySpeed: 2000,
-    infinite: false,
-  });
+		infinite: false,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					dots: false,
+					arrows: true,
+					//appendArrows: ".reviews__wrapp-img",
+				},
+			},
+		],
+	});
   
   $(window).on("load resize", function () {
 		if ($(window).width() < 768) {
@@ -23,7 +33,6 @@ $(function () {
 					{
 						breakpoint: 600,
 						settings: {
-							//centerMode: true,
 							variableWidth: false,
 							slidesToShow: 1,
 						},
