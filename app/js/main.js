@@ -1,5 +1,5 @@
 $(function () {
-	$(".reviews__slider").slick({
+  $(".reviews__slider").slick({
 		dots: true,
 		arrows: true,
 		prevArrow:
@@ -9,7 +9,30 @@ $(function () {
 		appendArrows: ".reviews__slider-control",
 		appendDots: ".reviews__dots",
 		autoplaySpeed: 2000,
-		infinite: false,
+    infinite: false,
+  });
+  
+  $(window).on("load resize", function () {
+		if ($(window).width() < 768) {
+			$(".restorants__list:not(.slick-initialized)").slick({
+				centerMode: false,
+				dots: true,
+				arrows: false,
+				slidesToShow: 2,
+				responsive: [
+					{
+						breakpoint: 600,
+						settings: {
+							//centerMode: true,
+							variableWidth: false,
+							slidesToShow: 1,
+						},
+					},
+				],
+			});
+		} else {
+			$(".restorants__list.slick-initialized").slick("unslick");
+    }
 	});
 
 	$(".nav__link").click(function () {
@@ -18,15 +41,16 @@ $(function () {
 		}
 		$(".nav__link").removeClass("active");
 		$(this).addClass("active");
-	});
-
+  });
 });
 
-new Swiper(".swiper", {
-	pagination: {
-		el: ".swiper-pagination",
-	},
-});
+
+
+//new Swiper(".swiper", {
+//	pagination: {
+//		el: ".swiper-pagination",
+//	},
+//});
 
 document.addEventListener("DOMContentLoaded", () => {
 	const burger = document.querySelector(".burger");
@@ -59,5 +83,6 @@ document.addEventListener("click", function (e) {
 		bodyLock.classList.remove("lock");
 	}
 });
+
 
 var mixer = mixitup(".popular__content");

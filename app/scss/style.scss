@@ -667,6 +667,35 @@
 		grid-template-columns: repeat(auto-fill, min(370px));
 		justify-content: center;
 		grid-gap: 30px;
+		@include mq("tablet") {
+			display: block;
+			margin-right: 5px;
+			& .slick-slide {
+        overflow: hidden;
+        text-align: center;
+        margin: 0 10px 30px 0;
+			}
+			& .slick-dots {
+				display: flex;
+				justify-content: center;
+				font-size: 20px;
+			}
+			& .slick-dots li {
+				font-size: 20px;
+				background-color: $gray;
+				border-radius: 50%;
+				font-size: 0;
+				width: 15px;
+				height: 15px;
+				cursor: pointer;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+				&.slick-active {
+					background-color: $accent;
+				}
+			}
+		}
 	}
 
 	&__item {
@@ -675,6 +704,7 @@
 		background-color: #fff;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
+		max-width: 370px;
 		transition: box-shadow 0.5s, border-radius 0.5s;
 		&:hover {
 			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
@@ -706,6 +736,7 @@
 	}
 
 	&__time {
+		font-weight: 300;
 		padding-left: 32px;
 		&::before {
 			position: absolute;
@@ -811,8 +842,8 @@
 			margin: 0 auto 20px;
 		}
 		@include mq("tablet") {
-      width: 250px;
-      height: 250px;
+			width: 250px;
+			height: 250px;
 		}
 	}
 
