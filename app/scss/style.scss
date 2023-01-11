@@ -167,12 +167,6 @@
 	@include mq("tablet") {
 		display: block;
 		z-index: 4;
-		&--active {
-			@include mq("phone-2") {
-				transform: translateX(-265px);
-				z-index: 4;
-			}
-		}
 	}
 }
 
@@ -184,21 +178,46 @@
 	position: absolute;
 	left: -15px;
 	top: -10px;
-	padding-left: 15px;
 	z-index: 3;
+	overflow: auto;
+  padding-bottom: 10px;
 	transform: translateX(-900%);
 	transition: transform 0.3s, background-color 0.3s;
+	&__wrapp-logo {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 15px;
+	}
 
 	&__logo {
-		display: block;
+		display: inline-block;
 		padding: 16px 0;
 		margin: 0;
+	}
+
+	&__close {
+		display: inline-block;
+		background-image: url("../images/icons/remove.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 18px;
+		width: 40px;
+		height: 40px;
+		margin: 0 26px 8px 0;
+		cursor: pointer;
+		border-radius: 3px;
+		transition: background-color 0.5s;
+		&:hover {
+			background-color: #faeded;
+		}
 	}
 
 	&__nav {
 		display: block;
 		border-top: 1px solid #eeeff3;
 		border-bottom: 1px solid #eeeff3;
+		padding-left: 15px;
 		margin: 0;
 	}
 
@@ -212,7 +231,11 @@
 	}
 
 	&__address {
-		padding-top: 15px;
+		padding: 15px 0 0 15px;
+	}
+
+	&__social {
+		padding-left: 15px;
 	}
 }
 
@@ -372,7 +395,7 @@
 			background-size: 352px;
 		}
 		@include mq("phone") {
-      background-size: contain;
+			background-size: contain;
 			height: 300px;
 		}
 	}
@@ -769,7 +792,7 @@
 			& .slick-slide {
 				overflow: hidden;
 				text-align: center;
-				margin: 0 10px 30px 0;
+				margin: 0 10px 25px 0;
 			}
 			& .slick-dots {
 				display: flex;
@@ -807,9 +830,15 @@
 		border-radius: 10px;
 		max-width: 370px;
 		transition: box-shadow 0.5s, border-radius 0.5s;
+    @include mq("tablet"){
+      margin-bottom: 3px;
+    }
 		&:hover {
 			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
 			border-radius: 10px;
+      @include mq("tablet"){
+        box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
+      }
 		}
 	}
 }
@@ -1207,9 +1236,9 @@
 			justify-content: center;
 			margin-bottom: 50px;
 		}
-    @include mq("phone"){
-      margin-bottom: 43px;
-    }
+		@include mq("phone") {
+			margin-bottom: 43px;
+		}
 	}
 
 	&__bg-wrapp {
@@ -1235,9 +1264,9 @@
 		@include mq("tablet-2") {
 			z-index: 2;
 		}
-    @include mq("phone"){
-      padding: 0;
-    }
+		@include mq("phone") {
+			padding: 0;
+		}
 		& p {
 			font-size: 20px;
 			line-height: 1.5;
@@ -1309,9 +1338,9 @@
 		display: block;
 		width: fit-content;
 		margin-bottom: 26px;
-    @include mq("phone"){
-      margin: 0 0 27px 0;
-    }
+		@include mq("phone") {
+			margin: 0 0 27px 0;
+		}
 	}
 
 	&__block-nav {

@@ -1,5 +1,5 @@
 $(function () {
-  $(".reviews__slider").slick({
+	$(".reviews__slider").slick({
 		dots: true,
 		arrows: true,
 		prevArrow:
@@ -16,13 +16,12 @@ $(function () {
 				settings: {
 					dots: false,
 					arrows: true,
-					//appendArrows: ".reviews__wrapp-img",
 				},
 			},
 		],
 	});
 
-  $(window).on("load resize", function () {
+	$(window).on("load resize", function () {
 		if ($(window).width() < 768) {
 			$(".restorants__list:not(.slick-initialized)").slick({
 				centerMode: false,
@@ -41,7 +40,7 @@ $(function () {
 			});
 		} else {
 			$(".restorants__list.slick-initialized").slick("unslick");
-    }
+		}
 	});
 
 	$(".nav__link").click(function () {
@@ -50,20 +49,20 @@ $(function () {
 		}
 		$(".nav__link").removeClass("active");
 		$(this).addClass("active");
-  });
+	});
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
 	const burger = document.querySelector(".burger");
 	burger.addEventListener("click", () => {
-		burger.classList.toggle("burger--active");
+		burger.classList.add("burger--active");
 	});
 });
 
 document.addEventListener("DOMContentLoaded", () => {
 	const burger = document.querySelector(".burger");
 	const mobileMenu = document.querySelector(".nav-mobile");
+	const close = document.querySelector(".nav-mobile__close");
 	const bodyLock = document.querySelector("body");
 
 	burger.addEventListener("click", () => {
@@ -74,27 +73,28 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			burger.classList.remove("burger--active");
 			bodyLock.classList.remove("lock");
+    }
+	});
+	close.addEventListener("click", () => {
+		mobileMenu.classList.toggle("nav--active");
+		if (mobileMenu.classList.contains("nav--active")) {
+			bodyLock.classList.add("lock");
+		} else {
+			bodyLock.classList.remove("lock");
 		}
 	});
 });
 
 document.addEventListener("click", function (e) {
+  const burger = document.querySelector(".burger");
+	const mobileMenu = document.querySelector(".nav-mobile");
+  const bodyLock = document.querySelector("body");
+
 	if (e.target !== burger && e.target !== mobileMenu) {
 		burger.classList.remove("burger--active");
 		mobileMenu.classList.remove("nav--active");
 		bodyLock.classList.remove("lock");
 	}
 });
-
-var btnContainer = document.getElementsByClass("nav__item");
-var btns = btnContainer.getElementsByClassName("nav__link");
-for (var i = 0; i < btns.length; i++) {
-	btns[i].addEventListener("click", function () {
-		var current = document.getElementsByClassName("active");
-		current[0].className = current[0].className.replace(" active", "");
-		this.className += " active";
-	});
-}
-
 
 var mixer = mixitup(".popular__content");
