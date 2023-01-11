@@ -1,0 +1,30 @@
+@include('components/_head.html')
+
+@include('components/_header.html')
+
+<main class="main">
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href="#">Главная</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link">Каталог товаров</a>
+        </li>
+      </ul>
+    </div >
+  </div>
+  <section class="catalog">
+    <div class="container">
+      <div class="catalog__top-wrapp">
+        <h2 class="catalog__title title">Каталог продуктов</h2>
+        <div class="top-filters"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')
