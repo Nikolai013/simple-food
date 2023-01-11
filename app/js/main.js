@@ -21,7 +21,7 @@ $(function () {
 			},
 		],
 	});
-  
+
   $(window).on("load resize", function () {
 		if ($(window).width() < 768) {
 			$(".restorants__list:not(.slick-initialized)").slick({
@@ -54,13 +54,6 @@ $(function () {
 });
 
 
-
-//new Swiper(".swiper", {
-//	pagination: {
-//		el: ".swiper-pagination",
-//	},
-//});
-
 document.addEventListener("DOMContentLoaded", () => {
 	const burger = document.querySelector(".burger");
 	burger.addEventListener("click", () => {
@@ -92,6 +85,16 @@ document.addEventListener("click", function (e) {
 		bodyLock.classList.remove("lock");
 	}
 });
+
+var btnContainer = document.getElementsByClass("nav__item");
+var btns = btnContainer.getElementsByClassName("nav__link");
+for (var i = 0; i < btns.length; i++) {
+	btns[i].addEventListener("click", function () {
+		var current = document.getElementsByClassName("active");
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	});
+}
 
 
 var mixer = mixitup(".popular__content");
