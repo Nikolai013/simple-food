@@ -180,20 +180,19 @@
 	top: -10px;
 	z-index: 3;
 	overflow: auto;
-  padding-bottom: 10px;
+	padding-bottom: 10px;
 	transform: translateX(-900%);
 	transition: transform 0.3s, background-color 0.3s;
 	&__wrapp-logo {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		padding-left: 15px;
 	}
 
 	&__logo {
 		display: inline-block;
 		padding: 16px 0;
-		margin: 0;
+		margin: 0 30px 0 0;
 	}
 
 	&__close {
@@ -204,7 +203,6 @@
 		background-size: 18px;
 		width: 40px;
 		height: 40px;
-		margin: 0 26px 8px 0;
 		cursor: pointer;
 		border-radius: 3px;
 		transition: background-color 0.5s;
@@ -277,6 +275,180 @@
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 1.2;
+	}
+}
+
+.catalog {
+	&__top-wrapp {
+		display: flex;
+		padding: 60px 0;
+	}
+	&__title {
+		text-align: left;
+	}
+	&__main-wrapp {
+		display: grid;
+		grid-template-columns: 271px 1fr;
+		column-gap: 29px;
+	}
+	&__list {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+		justify-content: center;
+		align-items: stretch;
+		margin-bottom: 60px;
+		@include mq("tablet-2") {
+			grid-gap: 25px;
+			margin-bottom: 40px;
+		}
+		@include mq("tablet") {
+			grid-template-columns: repeat(auto-fill, 170px);
+			grid-gap: 15px;
+			margin-bottom: 20px;
+		}
+		@include mq("phone-2") {
+			grid-gap: 10px 5px;
+			margin-bottom: 34px;
+		}
+		@include mq("phone") {
+			grid-template-columns: repeat(auto-fill, 174px);
+		}
+	}
+	&__item {
+		background-color: #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 0 1px #ececec;
+		transition: box-shadow 0.5s;
+		line-clamp: 2;
+		height: 299px;
+
+		&:hover {
+			box-shadow: 0 0 0 1px $accent;
+		}
+	}
+	&__title {
+		font-size: 24px;
+		line-height: 1.2;
+		letter-spacing: 0.03em;
+		margin-bottom: 15px;
+		&::after {
+			@include pseudo;
+			width: 100%;
+			height: 1px;
+			background-color: #ececec;
+			left: 0;
+			top: 59px;
+		}
+	}
+	&__form {
+		padding-top: 25px;
+	}
+	&__extra-controls {
+		display: flex;
+		justify-content: space-between;
+		padding-right: 14px;
+		& input {
+			max-width: 70px;
+			position: relative;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+			color: $dark;
+			background-color: #faeded;
+			border: 1px solid #ececec;
+			border-radius: 5px;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 1;
+			letter-spacing: 0.03em;
+		}
+	}
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		& span {
+			color: $gray;
+			font-size: 16px;
+			line-height: 1.2;
+			letter-spacing: 0.03em;
+			margin-right: 5px;
+		}
+		&::before {
+			@include pseudo;
+			background-image: url("../images/sprite.svg#icon-uah");
+			background-size: cover;
+			background-position: center;
+			width: 10px;
+			height: 13px;
+			filter: invert(100%) sepia(39%) saturate(236%) hue-rotate(292deg)
+				brightness(86%) contrast(74%);
+			right: -14px;
+		}
+	}
+	&__input {
+		cursor: pointer;
+	}
+  &__offer-form{
+    padding-top: 25px;
+  }
+  &__offer-label{
+    display: flex;
+    cursor: pointer;
+  }
+  &__offer-checkbox{
+    margin-right: 12px;
+  }
+  &__offer-input{
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.catalog__price-filter,
+.nav-filter,
+.catalog__offer {
+	background-color: #fff;
+	border: 1px solid #ececec;
+	border-radius: 5px;
+	position: relative;
+	padding: 15px 15px 25px;
+	margin-bottom: 30px;
+	.irs--round .irs-from,
+	.irs--round .irs-to,
+	.irs--round .irs-single {
+		display: none;
+	}
+	.irs--round .irs-handle {
+		cursor: pointer;
+		background-color: $accent;
+		border: none;
+		width: 18px;
+		height: 18px;
+    top: 28px;
+	}
+	.irs--round .irs-bar {
+		background-color: $accent;
+    height: 2px;
+	}
+  .irs-line{
+    height: 2px;
+  }
+}
+
+.nav-filter {
+	&__list {
+		padding-top: 25px;
+	}
+	&__item:not(:last-child) {
+		margin-bottom: 12px;
+	}
+	&__btn {
+		color: $dark;
+		font-size: 18px;
+		line-height: 1.3;
+		letter-spacing: 0.03em;
 	}
 }
 
@@ -830,15 +1002,15 @@
 		border-radius: 10px;
 		max-width: 370px;
 		transition: box-shadow 0.5s, border-radius 0.5s;
-    @include mq("tablet"){
-      margin-bottom: 3px;
-    }
+		@include mq("tablet") {
+			margin-bottom: 3px;
+		}
 		&:hover {
 			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
 			border-radius: 10px;
-      @include mq("tablet"){
-        box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
-      }
+			@include mq("tablet") {
+				box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
+			}
 		}
 	}
 }
@@ -1143,7 +1315,7 @@
 		& .slick-next.slick-arrow {
 			right: 50px;
 			@include mq("phone-2") {
-				right: 110px;
+				right: 70px;
 			}
 			@include mq("phone") {
 				right: 46px;
@@ -1152,7 +1324,7 @@
 		& .slick-prev.slick-arrow {
 			left: 50px;
 			@include mq("phone-2") {
-				left: 110px;
+				left: 70px;
 			}
 			@include mq("phone") {
 				left: 39px;
@@ -1557,5 +1729,9 @@
 		font-size: 14px;
 		line-height: 1;
 		padding: 30px 0;
+		@include mq("phone-2") {
+			padding: 20px 0;
+			background-color: #fff;
+		}
 	}
 }
