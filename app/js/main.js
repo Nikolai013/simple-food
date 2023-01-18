@@ -1,4 +1,9 @@
 $(function () {
+
+  $('.select-style').styler({
+    //selectPlaceholder: false,
+  });
+
   //Price-filter
   var $range = $(".js-range-slider"),
 		$inputFrom = $(".js-input-from"),
@@ -17,6 +22,8 @@ $(function () {
 		to: 800,
 		onStart: updateInputs,
 		onChange: updateInputs,
+    hide_from_to: true,
+    hide_min_max: true,
 	});
 	instance = $range.data("ionRangeSlider");
 
@@ -160,4 +167,4 @@ document.addEventListener("click", function (e) {
 	}
 });
 
-var mixer = mixitup(".popular__content");
+var mixer = mixitup(".popular__content, .catalog__list");

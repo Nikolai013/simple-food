@@ -18,8 +18,22 @@
   <section class="catalog">
     <div class="container">
       <div class="catalog__top-wrapp">
-        <h2 class="catalog__title title">Каталог продуктов</h2>
-        <div class="top-filters"></div>
+        <h2 class="catalog__top-title title">Каталог продуктов</h2>
+        <div class="catalog__top-filters">
+          <form class="catalog__top-form">
+            <select class="top-filters__view select-style">
+              <option value="">По названию</option>
+              <option value="">По снижению цены</option>
+              <option value="">По росту цены</option>
+            </select>
+            <select class="top-filters__view select-style">
+              <option value="">По 12</option>
+              <option value="">По 10</option>
+              <option value="">По 8</option>
+              <option value="">По 6</option>
+            </select>
+          </form>
+        </div>
       </div>
       <div class="catalog__main-wrapp">
         <div class="catalog__filter">
@@ -27,68 +41,65 @@
             <h3 class="catalog__title">Категории</h3>
             <ul class="nav-filter__list">
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter="all">
                   Бургеры
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".pizza">
                   Пицца
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".sandwiches">
                   Сендвичи
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".asian-food">
                   Азиатская кухня
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".set-menu">
                   Сеты
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".asian-food">
                   Европейская кухня
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".asian-food">
                   Напитки
                 </button>
               </li>
               <li class="nav-filter__item">
-                <button class="nav-filter__btn" type="button">
+                <button class="nav-filter__btn animation" type="button" data-filter=".asian-food">
                   Алкоголь
                 </button>
               </li>
             </ul>
           </nav>
           <div class="catalog__offer">
-            <h3 class="catalog__title">Предложения   </h3>
+            <h3 class="catalog__title">Предложения </h3>
             <form class="catalog__offer-form" action="#">
               <label class="catalog__offer-label">
-                <div class="catalog__offer-checkbox">
-                  <input class="catalog__offer-input" type="checkbox">
-                </div>
-                <span class="catalog__offer-text">Со скидкой</span>
-              </label >
+                Со скидкой
+                <input class="catalog__offer-input" type="checkbox">
+                <span class="catalog__custom-checkbox"></span>
+              </label>
               <label class="catalog__offer-label">
-                <div class="catalog__offer-checkbox">
-                  <input class="catalog__offer-input" type="checkbox">
-                </div>
-                <span class="catalog__offer-text">Новинка</span>
-              </label >
+                Новинка
+                <input class="catalog__offer-input" type="checkbox">
+                <span class="catalog__custom-checkbox"></span>
+              </label>
               <label class="catalog__offer-label">
-                <div class="catalog__offer-checkbox">
-                  <input class="catalog__offer-input" type="checkbox">
-                </div>
-                <span class="catalog__offer-text">Хит</span>
-              </label >
+                Хит
+                <input class="catalog__offer-input" type="checkbox">
+                <span class="catalog__custom-checkbox"></span>
+              </label>
             </form>
           </div>
           <div class="catalog__price-filter">
@@ -110,7 +121,7 @@
         </div>
         <div class="catalog__product">
           <ul class="catalog__list">
-            <li class="catalog__item">
+            <li class="catalog__item mix burgers">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -119,7 +130,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix burgers">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -128,7 +139,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix burgers">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -137,7 +148,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix burgers">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -146,7 +157,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix pizza">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -155,7 +166,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix pizza">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -164,7 +175,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix asian-food">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -173,7 +184,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix asian-food">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -182,7 +193,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix sandwiches">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -191,7 +202,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix sandwiches">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -200,7 +211,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix set-menu">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -209,7 +220,7 @@
                 <button class="product-card__order-btn btn">В корзину</button>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item mix sandwiches">
               <article class="product-card">
                 <img class="product-card__img" src="images/food-cart/cheeseburger-lettuce.png" width="140" height="140"
                      alt="бургер с курицей">
@@ -219,8 +230,68 @@
               </article>
             </li>
           </ul>
+          <div class="pagination">
+            <a class="pagination__prev pagination__arrows" href="#"></a>
+            <ul class="pagination__list">
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">1</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">2</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link">...</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">9</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">10</a>
+              </li>
+            </ul>
+            <a class="pagination__next pagination__arrows" href="#"></a>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+  @include('components/_app.html')
+  <section class="offers">
+    <div class="container">
+      <h3 class="offers__title title">Акции и скидки</h3>
+      <ul class="offers__list">
+        <li class="offers__item">
+          <a href="#">
+            <article class="rest-card">
+              <img class="rest-card__img" src="images/offers-card/offer-pizza.jpg" width="370" height="300"
+                   alt="Фото пицци Ранчо">
+              <div class="rest-card__wrapp offers__card-wrapp">
+                <p>Скидка 50% на вторую пиццу</p>
+              </div>
+            </article>
+          </a>
+        </li>
+        <li class="offers__item">
+          <a href="#">
+            <article class="rest-card">
+              <img class="rest-card__img" src="images/offers-card/offer-fries.jpg" width="370" height="300" alt="Фото пицци Ранчо">
+              <div class="rest-card__wrapp offers__card-wrapp">
+                <p>Картошечка из KFC даром при заказе бургера</p>
+              </div>
+            </article>
+          </a>
+        </li>
+        <li class="offers__item">
+          <a href="#">
+            <article class="rest-card">
+              <img class="rest-card__img" src="images/offers-card/offer-burger.jpg" width="370" height="300" alt="Фото пицци Ранчо">
+              <div class="rest-card__wrapp offers__card-wrapp">
+                <p>Чёрные бургеры на чёрный день</p>
+              </div>
+            </article>
+          </a>
+        </li>
+      </ul>
     </div>
   </section>
 </main>

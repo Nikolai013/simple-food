@@ -245,7 +245,7 @@
 	background-color: rgba(255, 122, 80, 0.1);
 	&__list {
 		display: flex;
-		padding: 24px 0;
+		padding: 20px 0;
 	}
 	&__item {
 		position: relative;
@@ -281,11 +281,71 @@
 .catalog {
 	&__top-wrapp {
 		display: flex;
+    justify-content: space-between;
 		padding: 60px 0;
 	}
-	&__title {
-		text-align: left;
-	}
+  &__top-title{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  & .jq-selectbox__select{
+    border: 1px solid $gray;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 15px 40px 15px 15px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-left: 15px;
+    transition: border-color .5s, background-color .5s, color .5s;
+    &::after  {
+      @include pseudo;
+      mask-image: url('../images/sprite.svg#arrow-filter');
+      mask-size: cover;
+			mask-position: center;
+			mask-repeat: no-repeat;
+      background-color: $gray;
+      width: 11px;
+      height: 6px;
+      top: 21px;
+      right: 16px;
+    }
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+      &::after{
+        background-color: $accent;
+      }
+    }
+    &:focus {
+      color: $darkBlue-900;
+      &::after{
+        background-color: $gray;
+      }
+    }
+  }
+  & .jq-selectbox__dropdown {
+    background-color: #fff;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    cursor: pointer;
+    right: 0;
+    padding: 10px;
+    margin-top: 5px;
+    & li {
+      font-size: 14px;
+      line-height: 1.2;
+      transition: color .5s;
+      &:not(:last-child){
+        border-bottom: 1px solid $gray;
+      }
+      &:hover{
+        color: $accent;
+      }
+    }
+  }
 	&__main-wrapp {
 		display: grid;
 		grid-template-columns: 271px 1fr;
@@ -332,6 +392,7 @@
 		line-height: 1.2;
 		letter-spacing: 0.03em;
 		margin-bottom: 15px;
+    text-align: left;
 		&::after {
 			@include pseudo;
 			width: 100%;
@@ -362,6 +423,10 @@
 			font-size: 16px;
 			line-height: 1;
 			letter-spacing: 0.03em;
+      &:focus {
+        border: 1px solid $accent;
+        border-radius: 3px;
+      }
 		}
 	}
 	&__label {
@@ -394,15 +459,58 @@
     padding-top: 25px;
   }
   &__offer-label{
+    position: relative;
     display: flex;
     cursor: pointer;
+    padding-left: 36px;
+    transition: color .5s;
+    &:not(:last-child){
+      margin-bottom: 13px;
+    }
+    &:hover {
+      color: $accent;
+    }
+    &:focus {
+      color: $darkBlue-900;
+    }
+    &:hover .catalog__custom-checkbox{
+      border: 1px solid $accent;
+    }
+    & .catalog__offer-input:checked ~ .catalog__custom-checkbox {
+      border: 1px solid $darkBlue-900;
+    }
+    & .catalog__offer-input:checked ~ .catalog__custom-checkbox::after {
+      display:block;
+    }
   }
-  &__offer-checkbox{
-    margin-right: 12px;
+  &__custom-checkbox{
+    position: absolute;
+    top:-1px;
+    left:0;
+    width:24px;
+    height:24px;
+    background-color: #faeded;
+    border: 1px solid $silver-200;
+    border-radius: 3px;
+    transition: border .5s;
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 3px;
+      left: 8px;
+      width: 7px;
+      height: 12px;
+      border: solid $darkBlue-900;
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg);
+    }
   }
   &__offer-input{
-    width: 24px;
-    height: 24px;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
 }
 
@@ -414,12 +522,7 @@
 	border-radius: 5px;
 	position: relative;
 	padding: 15px 15px 25px;
-	margin-bottom: 30px;
-	.irs--round .irs-from,
-	.irs--round .irs-to,
-	.irs--round .irs-single {
-		display: none;
-	}
+	margin-bottom: 24px;
 	.irs--round .irs-handle {
 		cursor: pointer;
 		background-color: $accent;
@@ -666,7 +769,6 @@
 			background-color: $accent;
 			color: #fff;
 			transition: color 0.5s, fill 0.5s;
-
 			.popular__icon {
 				fill: #fff;
 			}
@@ -760,6 +862,7 @@
 	cursor: pointer;
 	text-align: center;
 	padding: 20px 15px;
+  margin: 0 auto;
 
 	&__img {
 		max-width: 140px;
@@ -1010,101 +1113,6 @@
 			border-radius: 10px;
 			@include mq("tablet") {
 				box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
-			}
-		}
-	}
-}
-
-.rest-card {
-	&__img {
-		border-radius: 10px 10px 0 0;
-	}
-
-	&__subtitle {
-		font-weight: 400;
-		font-size: 24px;
-		margin-bottom: 20px;
-	}
-
-	&__wrapp {
-		padding: 15px 20px 20px;
-		@include mq("phone") {
-			padding: 15px 13px 20px 22px;
-		}
-	}
-
-	&__inner-wrapp {
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	&__time {
-		font-weight: 300;
-		padding-left: 32px;
-		&::before {
-			position: absolute;
-			content: "";
-			background-image: url("../images/sprite.svg#icon-timer-little");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 19px;
-			height: 20px;
-			left: 0;
-		}
-	}
-
-	&__link {
-		position: relative;
-		border-radius: 20px;
-		background-color: $accent;
-		padding: 17px 40px;
-		transition: background-color 0.5s, box-shadow 0.5s;
-
-		&::before {
-			position: absolute;
-			content: "";
-			background-color: #fff;
-			mask-image: url("../images/sprite.svg#icon-arrow-right");
-			mask-size: cover;
-			mask-position: center;
-			mask-repeat: no-repeat;
-			width: 14px;
-			height: 12px;
-			left: 33px;
-			bottom: 11px;
-			transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
-		}
-
-		&:hover {
-			background-color: #ffffff;
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-
-			&::before {
-				background-color: $accent;
-				transform: translateX(20px);
-			}
-		}
-
-		&:active {
-			background-color: #fff2ed;
-			box-shadow: none;
-			border-radius: 20px;
-
-			&::before {
-				left: 33px;
-			}
-		}
-
-		&:focus {
-			background-color: #fff2ed;
-			border-radius: 20px;
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-
-			&::before {
-				background-color: $accent;
 			}
 		}
 	}
@@ -1486,6 +1494,77 @@
 	}
 }
 
+.offers{
+  padding-bottom: 120px;
+  &__title{
+    text-align-last: left;
+    margin-bottom: 60px;
+  }
+  &__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, min(370px));
+		justify-content: center;
+		grid-gap: 30px;
+		@include mq("tablet") {
+			display: block;
+			margin-right: 5px;
+			& .slick-slide {
+				overflow: hidden;
+				text-align: center;
+				margin: 0 10px 25px 0;
+			}
+			& .slick-dots {
+				display: flex;
+				justify-content: center;
+				font-size: 20px;
+			}
+			& .slick-dots li {
+				font-size: 20px;
+				background-color: $gray;
+				border-radius: 50%;
+				font-size: 0;
+				width: 15px;
+				height: 15px;
+				cursor: pointer;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+				&.slick-active {
+					background-color: $accent;
+				}
+			}
+		}
+		@include mq("phone") {
+			& .slick-slide {
+				text-align: left;
+			}
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+		max-width: 370px;
+		transition: box-shadow 0.5s, border-radius 0.5s;
+		@include mq("tablet") {
+			margin-bottom: 3px;
+		}
+		&:hover {
+			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
+			border-radius: 10px;
+			@include mq("tablet") {
+				box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
+			}
+		}
+	}
+  &__card-wrapp{
+    padding: 15px 20px;
+  }
+}
+
 .footer-top {
 	display: flex;
 	margin-bottom: 57px;
@@ -1735,3 +1814,4 @@
 		}
 	}
 }
+
