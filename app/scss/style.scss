@@ -6,306 +6,332 @@
 @import "global";
 
 .header {
-	padding: 28px 0 57px 0;
-	@include mq("tablet-2") {
-		padding: 10px 0 0 0;
-	}
-	@include mq("tablet") {
-		margin-bottom: 120px;
-	}
-	@include mq("phone") {
-		margin-bottom: 37px;
-	}
+  padding: 28px 0 57px 0;
+  @include mq("tablet-2") {
+    padding: 10px 0 0 0;
+  }
+  //@include mq("tablet") {
+  //	margin-bottom: 120px;
+  //}
+  //@include mq("phone") {
+  //	margin-bottom: 37px;
+  //}
 
-	&__wrapp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-	}
+  &__wrapp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
 }
 
 .logo {
-	opacity: 1;
-	transition: opacity 0.5s;
-	margin: 6px auto 0 5px;
-	@include mq("phone-2") {
-		margin: 4px 78px 0 0;
-	}
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin: 6px auto 0 5px;
+  @include mq("phone-2") {
+    margin: 4px 78px 0 0;
+  }
 
-	&:hover {
-		opacity: 0.8;
-	}
+  &:hover {
+    opacity: 0.8;
+  }
 
-	&:active {
-		opacity: 0.5;
-	}
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .nav {
-	display: flex;
-	justify-content: space-between;
-	margin-right: 52px;
-	@include mq("tablet") {
-		display: none;
-	}
+  display: flex;
+  justify-content: space-between;
+  margin-right: 52px;
+  @include mq("tablet") {
+    display: none;
+  }
 
-	&__list {
-		display: flex;
-	}
+  &__list {
+    display: flex;
+  }
 
-	&__item {
-		&:not(:last-child) {
-			margin-right: 45px;
-		}
-	}
+  &__item {
+    &:not(:last-child) {
+      margin-right: 45px;
+    }
+  }
 
-	&__link {
-		color: #31352b;
-		line-height: 1.2;
+  &__link {
+    color: #31352b;
+    line-height: 1.2;
 
-		&:hover {
-			color: $accent;
-		}
+    &:hover {
+      color: $accent;
+    }
 
-		&:active {
-			color: $dark;
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-		}
-	}
+    &:active {
+      color: $dark;
+      text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+    }
+  }
 }
 
 .userbar {
-	display: flex;
-	@include mq("tablet-2") {
-		margin-right: 15px;
-	}
-	&__item {
-		&:not(:last-child) {
-			margin-right: 10px;
-		}
-	}
+  display: flex;
+  @include mq("tablet-2") {
+    margin-right: 15px;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 
-	&__btn {
-		display: block;
-		position: relative;
-		width: 44px;
-		height: 44px;
-		background-color: transparent;
-		border-radius: 5px;
-		position: relative;
-		transition: background-color 0.3s, box-shadow 5s, stroke 0.3s, fill 0.3s,
-			stroke 0.5s;
+  &__btn {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 5s, stroke 0.3s, fill 0.3s,
+      stroke 0.5s;
 
-		&:hover {
-			background-color: $accent;
+    &:hover {
+      background-color: $accent;
 
-			&:hover .userbar__svg {
-				fill: $accent;
-				stroke: #fff;
-			}
+      &:hover .userbar__svg {
+        fill: $accent;
+        stroke: #fff;
+      }
 
-			&:hover .userbar__num {
-				background-color: #fff;
-				color: $accent;
-			}
-		}
+      &:hover .userbar__num {
+        background-color: #fff;
+        color: $accent;
+      }
+    }
 
-		&:active {
-			background-color: #fff2ed;
+    &:active {
+      background-color: #fff2ed;
 
-			&:active .userbar__svg {
-				fill: none;
-				stroke: $dark;
-			}
+      &:active .userbar__svg {
+        fill: none;
+        stroke: $dark;
+      }
 
-			&:active .userbar__num {
-				background-color: $accent;
-				color: #fff;
-			}
-		}
+      &:active .userbar__num {
+        background-color: $accent;
+        color: #fff;
+      }
+    }
 
-		&:focus {
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
-	}
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+  }
 
-	&__svg {
-		position: absolute;
-		width: 19px;
-		height: 19px;
-		left: 13px;
-		bottom: 12px;
-		fill: none;
-		stroke: #31352b;
-	}
+  &__svg {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    left: 13px;
+    bottom: 12px;
+    fill: none;
+    stroke: #31352b;
+  }
 
-	&__num {
-		position: absolute;
-		content: "";
-		height: 14px;
-		background-color: $accent;
-		border-radius: 50%;
-		text-align: center;
-		font-weight: 400;
-		font-size: 10px;
-		line-height: 14px;
-		padding: 0 4px;
-		top: 7px;
-		right: 4px;
-		color: #ffffff;
-	}
+  &__num {
+    position: absolute;
+    content: "";
+    height: 14px;
+    background-color: $accent;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    padding: 0 4px;
+    top: 7px;
+    right: 4px;
+    color: #ffffff;
+  }
 }
 
 .burger {
-	@include burger;
-	display: none;
-	@include mq("phone") {
-		width: 56px;
-		margin-right: 15px;
-	}
-	@include mq("tablet") {
-		display: block;
-		z-index: 4;
-	}
+  @include burger;
+  display: none;
+  @include mq("phone") {
+    width: 56px;
+    margin-right: 15px;
+  }
+  @include mq("tablet") {
+    display: block;
+    z-index: 4;
+  }
 }
 
 .nav-mobile {
-	max-width: 300px;
-	width: 100%;
-	height: 100vh;
-	background-color: #fff;
-	position: absolute;
-	left: -15px;
-	top: -10px;
-	z-index: 3;
-	overflow: auto;
-	padding-bottom: 10px;
-	transform: translateX(-900%);
-	transition: transform 0.3s, background-color 0.3s;
-	&__wrapp-logo {
-		display: flex;
-		align-items: center;
-		padding-left: 15px;
-	}
+  max-width: 300px;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: absolute;
+  left: -15px;
+  top: -10px;
+  z-index: 11;
+  overflow: auto;
+  padding-bottom: 10px;
+  transform: translateX(-900%);
+  transition: transform 0.3s, background-color 0.3s;
+  &__wrapp-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  }
 
-	&__logo {
-		display: inline-block;
-		padding: 16px 0;
-		margin: 0 30px 0 0;
-	}
+  &__logo {
+    display: inline-block;
+    padding: 16px 0;
+    margin: 0 30px 0 0;
+  }
 
-	&__close {
-		display: inline-block;
-		background-image: url("../images/icons/remove.svg");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 18px;
-		width: 40px;
-		height: 40px;
-		cursor: pointer;
-		border-radius: 3px;
-		transition: background-color 0.5s;
-		&:hover {
-			background-color: #faeded;
-		}
-	}
+  &__nav {
+    display: block;
+    border-top: 1px solid #eeeff3;
+    border-bottom: 1px solid #eeeff3;
+    padding-left: 15px;
+    margin: 0;
+  }
 
-	&__nav {
-		display: block;
-		border-top: 1px solid #eeeff3;
-		border-bottom: 1px solid #eeeff3;
-		padding-left: 15px;
-		margin: 0;
-	}
+  &__list {
+    display: block;
+    padding: 25px 0 5px;
+  }
 
-	&__list {
-		display: block;
-		padding: 25px 0 5px;
-	}
+  &__item {
+    margin-bottom: 20px;
+  }
 
-	&__item {
-		margin-bottom: 20px;
-	}
+  &__address {
+    padding: 15px 0 0 15px;
+  }
 
-	&__address {
-		padding: 15px 0 0 15px;
-	}
-
-	&__social {
-		padding-left: 15px;
-	}
+  &__social {
+    padding-left: 15px;
+  }
 }
 
 .nav--active {
-	transform: translateX(0);
+  transform: translateX(0);
 }
 
 .breadcrumb {
-	background-color: rgba(255, 122, 80, 0.1);
-	&__list {
-		display: flex;
-		padding: 20px 0;
-	}
-	&__item {
-		position: relative;
-		&::before {
-			@include pseudo;
-			background-image: url("../images/sprite.svg#breadcrumb-arrow");
-			background-size: cover;
-			background-position: center;
-			width: 6px;
-			height: 10px;
-			filter: invert(89%) sepia(0%) saturate(8%) hue-rotate(189deg)
-				brightness(92%) contrast(82%);
-			bottom: 5px;
-			right: -12px;
-		}
-		&:last-child {
-			&::before {
-				display: none;
-			}
-		}
-		&:not(:first-child) {
-			margin-left: 17px;
-		}
-	}
-	&__link {
-		color: #505050;
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 1.2;
-	}
+  background-color: rgba(255, 122, 80, 0.1);
+  @include mq("phone-2"){
+    margin-top: 15px;
+  }
+  &__list {
+    display: flex;
+    padding: 20px 0;
+  }
+  &__item {
+    position: relative;
+    &::before {
+      @include pseudo;
+      background-image: url("../images/sprite.svg#breadcrumb-arrow");
+      background-size: cover;
+      background-position: center;
+      width: 6px;
+      height: 10px;
+      filter: invert(89%) sepia(0%) saturate(8%) hue-rotate(189deg)
+        brightness(92%) contrast(82%);
+      bottom: 5px;
+      right: -12px;
+    }
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+    &:not(:first-child) {
+      margin-left: 17px;
+    }
+  }
+  &__link {
+    color: #505050;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+  }
 }
 
 .catalog {
-	&__top-wrapp {
-		display: flex;
+  &__top-wrapp {
+    display: flex;
     justify-content: space-between;
-		padding: 60px 0;
-	}
-  &__top-title{
+    flex-wrap: wrap;
+    padding: 60px 0;
+    @include mq("tablet-2") {
+      padding: 40px 0;
+    }
+    @include mq("phone-2") {
+      padding: 40px 0 27px;
+    }
+  }
+  &__top-filters {
+    @include mq("tablet") {
+      display: flex;
+    }
+  }
+  &__top-title {
     font-weight: 500;
     font-size: 36px;
-    line-height: 1.3;
+    @include mq("desktop") {
+      font-size: 33px;
+    }
+    @include mq("tablet-2") {
+      font-size: 30px;
+    }
+    @include mq("tablet") {
+      text-align: left;
+      font-size: 28px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+    @include mq("phone-2") {
+      font-size: 26px;
+    }
   }
 
-  & .jq-selectbox__select{
+  &__filter-btn {
+    display: none;
+    width: 47px;
+    height: 47px;
+    background-image: url("../images/icons/btn-open-filters.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include mq("tablet") {
+      display: block;
+    }
+  }
+
+  & .jq-selectbox__select {
     border: 1px solid $gray;
     border-radius: 3px;
     cursor: pointer;
-    padding: 15px 40px 15px 15px;
+    padding: 15px 36px 15px 10px;
     position: relative;
     font-size: 14px;
     line-height: 1.2;
-    margin-left: 15px;
-    transition: border-color .5s, background-color .5s, color .5s;
-    &::after  {
+    margin-left: 10px;
+    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+    &::after {
       @include pseudo;
-      mask-image: url('../images/sprite.svg#arrow-filter');
+      mask-image: url("../images/sprite.svg#arrow-filter");
       mask-size: cover;
-			mask-position: center;
-			mask-repeat: no-repeat;
+      mask-position: center;
+      mask-repeat: no-repeat;
       background-color: $gray;
       width: 11px;
       height: 6px;
@@ -315,13 +341,13 @@
     &:hover {
       color: $accent;
       border-color: $accent;
-      &::after{
+      &::after {
         background-color: $accent;
       }
     }
     &:focus {
       color: $darkBlue-900;
-      &::after{
+      &::after {
         background-color: $gray;
       }
     }
@@ -337,134 +363,164 @@
     & li {
       font-size: 14px;
       line-height: 1.2;
-      transition: color .5s;
-      &:not(:last-child){
+      transition: color 0.5s;
+      &:not(:last-child) {
         border-bottom: 1px solid $gray;
       }
-      &:hover{
+      &:hover {
         color: $accent;
       }
     }
   }
-	&__main-wrapp {
-		display: grid;
-		grid-template-columns: 271px 1fr;
-		column-gap: 29px;
-	}
-	&__list {
-		display: grid;
-		grid-gap: 10px;
-		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-		justify-content: center;
-		align-items: stretch;
-		margin-bottom: 60px;
-		@include mq("tablet-2") {
-			grid-gap: 25px;
-			margin-bottom: 40px;
-		}
-		@include mq("tablet") {
-			grid-template-columns: repeat(auto-fill, 170px);
-			grid-gap: 15px;
-			margin-bottom: 20px;
-		}
-		@include mq("phone-2") {
-			grid-gap: 10px 5px;
-			margin-bottom: 34px;
-		}
-		@include mq("phone") {
-			grid-template-columns: repeat(auto-fill, 174px);
-		}
-	}
-	&__item {
-		background-color: #fff;
-		border-radius: 5px;
-		box-shadow: 0 0 0 1px #ececec;
-		transition: box-shadow 0.5s;
-		line-clamp: 2;
-		height: 299px;
+  &__main-wrapp {
+    display: grid;
+    grid-template-columns: 271px 1fr;
+    column-gap: 29px;
+    @include mq("tablet") {
+      position: relative;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__filter {
+    @include mq("tablet") {
+      position: fixed;
+      display: block;
+      opacity: 1;
+      max-width: 320px;
+      width: 100%;
+      background-color: #fff;
+      top: 0;
+      left: 0;
+      transform: translateX(-200%);
+      z-index: 10;
+      transition: transform .5s;
+    }
+    &--active {
+      overflow: auto;
+      height: 100vh;
+      transform: translateX(0%);
+      & .close {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+      }
+    }
+  }
+  &__filter-wrapp {
+    width: 270px;
+    padding-top: 80px;
+  }
+  &__list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 60px;
+    @include mq("tablet-2") {
+      margin-bottom: 40px;
+    }
+    @include mq("tablet") {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      grid-gap: 10px 5px;
+      margin-bottom: 34px;
+    }
+    @include mq("phone") {
+      grid-template-columns: repeat(auto-fill, 174px);
+      margin-left: -18px;
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #ececec;
+    transition: box-shadow 0.5s;
+    line-clamp: 2;
+    height: 299px;
 
-		&:hover {
-			box-shadow: 0 0 0 1px $accent;
-		}
-	}
-	&__title {
-		font-size: 24px;
-		line-height: 1.2;
-		letter-spacing: 0.03em;
-		margin-bottom: 15px;
+    &:hover {
+      box-shadow: 0 0 0 1px $accent;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
     text-align: left;
-		&::after {
-			@include pseudo;
-			width: 100%;
-			height: 1px;
-			background-color: #ececec;
-			left: 0;
-			top: 59px;
-		}
-	}
-	&__form {
-		padding-top: 25px;
-	}
-	&__extra-controls {
-		display: flex;
-		justify-content: space-between;
-		padding-right: 14px;
-		& input {
-			max-width: 70px;
-			position: relative;
-			width: 100%;
-			height: 40px;
-			text-align: center;
-			color: $dark;
-			background-color: #faeded;
-			border: 1px solid #ececec;
-			border-radius: 5px;
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 1;
-			letter-spacing: 0.03em;
+    &::after {
+      @include pseudo;
+      width: 100%;
+      height: 1px;
+      background-color: #ececec;
+      left: 0;
+      top: 59px;
+    }
+  }
+  &__form {
+    padding-top: 25px;
+  }
+  &__extra-controls {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 14px;
+    & input {
+      max-width: 70px;
+      position: relative;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      color: $dark;
+      background-color: #faeded;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.03em;
       &:focus {
         border: 1px solid $accent;
         border-radius: 3px;
       }
-		}
-	}
-	&__label {
-		position: relative;
-		display: flex;
-		align-items: center;
-		& span {
-			color: $gray;
-			font-size: 16px;
-			line-height: 1.2;
-			letter-spacing: 0.03em;
-			margin-right: 5px;
-		}
-		&::before {
-			@include pseudo;
-			background-image: url("../images/sprite.svg#icon-uah");
-			background-size: cover;
-			background-position: center;
-			width: 10px;
-			height: 13px;
-			filter: invert(100%) sepia(39%) saturate(236%) hue-rotate(292deg)
-				brightness(86%) contrast(74%);
-			right: -14px;
-		}
-	}
-	&__input {
-		cursor: pointer;
-	}
-  &__offer-form{
+    }
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    & span {
+      color: $gray;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      margin-right: 5px;
+    }
+    &::before {
+      @include pseudo;
+      background-image: url("../images/sprite.svg#icon-uah");
+      background-size: cover;
+      background-position: center;
+      width: 10px;
+      height: 13px;
+      filter: invert(100%) sepia(39%) saturate(236%) hue-rotate(292deg)
+        brightness(86%) contrast(74%);
+      right: -14px;
+    }
+  }
+  &__input {
+    cursor: pointer;
+  }
+  &__offer-form {
     padding-top: 25px;
   }
-  &__offer-label{
+  &__offer-label {
     position: relative;
     display: flex;
     cursor: pointer;
     padding-left: 36px;
-    transition: color .5s;
-    &:not(:last-child){
+    transition: color 0.5s;
+    &:not(:last-child) {
       margin-bottom: 13px;
     }
     &:hover {
@@ -473,26 +529,26 @@
     &:focus {
       color: $darkBlue-900;
     }
-    &:hover .catalog__custom-checkbox{
+    &:hover .catalog__custom-checkbox {
       border: 1px solid $accent;
     }
     & .catalog__offer-input:checked ~ .catalog__custom-checkbox {
       border: 1px solid $darkBlue-900;
     }
     & .catalog__offer-input:checked ~ .catalog__custom-checkbox::after {
-      display:block;
+      display: block;
     }
   }
-  &__custom-checkbox{
+  &__custom-checkbox {
     position: absolute;
-    top:-1px;
-    left:0;
-    width:24px;
-    height:24px;
+    top: -1px;
+    left: 0;
+    width: 24px;
+    height: 24px;
     background-color: #faeded;
     border: 1px solid $silver-200;
     border-radius: 3px;
-    transition: border .5s;
+    transition: border 0.5s;
     &::after {
       content: "";
       position: absolute;
@@ -506,7 +562,7 @@
       transform: rotate(45deg);
     }
   }
-  &__offer-input{
+  &__offer-input {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -517,1301 +573,1330 @@
 .catalog__price-filter,
 .nav-filter,
 .catalog__offer {
-	background-color: #fff;
-	border: 1px solid #ececec;
-	border-radius: 5px;
-	position: relative;
-	padding: 15px 15px 25px;
-	margin-bottom: 24px;
-	.irs--round .irs-handle {
-		cursor: pointer;
-		background-color: $accent;
-		border: none;
-		width: 18px;
-		height: 18px;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  position: relative;
+  padding: 15px 15px 25px;
+  margin-bottom: 24px;
+  .irs--round .irs-handle {
+    cursor: pointer;
+    background-color: $accent;
+    border: none;
+    width: 18px;
+    height: 18px;
     top: 28px;
-	}
-	.irs--round .irs-bar {
-		background-color: $accent;
+  }
+  .irs--round .irs-bar {
+    background-color: $accent;
     height: 2px;
-	}
-  .irs-line{
+  }
+  .irs-line {
     height: 2px;
   }
 }
 
 .nav-filter {
-	&__list {
-		padding-top: 25px;
-	}
-	&__item:not(:last-child) {
-		margin-bottom: 12px;
-	}
-	&__btn {
-		color: $dark;
-		font-size: 18px;
-		line-height: 1.3;
-		letter-spacing: 0.03em;
-	}
+  &__list {
+    padding-top: 25px;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__btn {
+    color: $dark;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+  }
 }
 
 .hero {
-	padding-bottom: 75px;
-	@include mq("tablet-2") {
-		padding-bottom: 35px;
-	}
-	&__wrapp {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		@include mq("tablet") {
-			justify-content: center;
-		}
-	}
+  padding-bottom: 75px;
+  @include mq("tablet-2") {
+    padding-bottom: 35px;
+  }
+  @include mq("tablet") {
+    padding-top: 120px;
+  }
+  @include mq("phone") {
+    padding-top: 37px;
+  }
+  &__wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq("tablet") {
+      justify-content: center;
+    }
+  }
 
-	&__content {
-		max-width: 450px;
-		width: 100%;
-		@include mq("tablet-2") {
-			max-width: 335px;
-		}
-		@include mq("tablet") {
-			z-index: 1;
-			max-width: 600px;
-		}
-	}
+  &__content {
+    max-width: 450px;
+    width: 100%;
+    @include mq("tablet-2") {
+      max-width: 335px;
+    }
+    @include mq("tablet") {
+      z-index: 1;
+      max-width: 600px;
+    }
+  }
 
-	&__title {
-		font-weight: 500;
-		font-size: 66px;
-		line-height: 1.3;
-		text-transform: uppercase;
-		color: $darkBlue-900;
-		margin-bottom: 20px;
-		@include mq("tablet-2") {
-			font-size: 52px;
-		}
-		@include mq("tablet") {
-			max-width: 350px;
-		}
-		@include mq("phone") {
-			max-width: 280px;
-			font-size: 40px;
-		}
+  &__title {
+    font-weight: 500;
+    font-size: 66px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $darkBlue-900;
+    margin-bottom: 20px;
+    @include mq("tablet-2") {
+      font-size: 52px;
+    }
+    @include mq("tablet") {
+      max-width: 350px;
+    }
+    @include mq("phone") {
+      max-width: 280px;
+      font-size: 40px;
+    }
 
-		& span {
-			color: $accent;
-		}
-	}
+    & span {
+      color: $accent;
+    }
+  }
 
-	& p {
-		font-weight: 400;
-		font-size: 20px;
-		line-height: 1.5;
-		color: $dark;
-		margin-bottom: 35px;
-		@include mq("tablet-2") {
-			font-size: 17px;
-		}
-		@include mq("phone") {
-			margin-bottom: 20px;
-		}
-	}
+  & p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $dark;
+    margin-bottom: 35px;
+    @include mq("tablet-2") {
+      font-size: 17px;
+    }
+    @include mq("phone") {
+      margin-bottom: 20px;
+    }
+  }
 
-	&__btn {
-		font-size: 18px;
-		padding: 12px 32px;
-		margin-right: 34px;
-		@include mq("phone") {
-			font-size: 14px;
-			line-height: 1.3;
-			padding: 9px 25px;
-			margin-right: 25px;
-		}
-	}
+  &__btn {
+    font-size: 18px;
+    padding: 12px 32px;
+    margin-right: 34px;
+    @include mq("phone") {
+      font-size: 14px;
+      line-height: 1.3;
+      padding: 9px 25px;
+      margin-right: 25px;
+    }
+  }
 
-	&__link {
-		font-weight: 400;
-		font-size: 20px;
-		text-decoration: underline;
-		@include mq("phone") {
-			font-size: 16px;
-			line-height: 1.5;
-		}
+  &__link {
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: underline;
+    @include mq("phone") {
+      font-size: 16px;
+      line-height: 1.5;
+    }
 
-		&:hover {
-			text-decoration: none;
-		}
+    &:hover {
+      text-decoration: none;
+    }
 
-		&:active {
-			color: $darkBlue-900;
-			box-shadow: none;
-			text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
-		}
-	}
+    &:active {
+      color: $darkBlue-900;
+      box-shadow: none;
+      text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    }
+  }
 
-	&__img-bg {
-		max-width: 560px;
-		width: 100%;
-		height: 660px;
-		background-position: center right;
-		background-size: cover;
-		background-repeat: no-repeat;
-		@include mq("desktop") {
-			background-size: 520px;
-		}
-		@include mq("tablet-2") {
-			background-size: 400px;
-		}
-		@include mq("tablet") {
-			@include pseudo;
-			height: 440px;
-			opacity: 0.2;
-			background-size: 352px;
-		}
-		@include mq("phone") {
-			background-size: contain;
-			height: 300px;
-		}
-	}
+  &__img-bg {
+    max-width: 560px;
+    width: 100%;
+    height: 660px;
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include mq("desktop") {
+      background-size: 520px;
+    }
+    @include mq("tablet-2") {
+      background-size: 400px;
+    }
+    @include mq("tablet") {
+      @include pseudo;
+      height: 440px;
+      opacity: 0.2;
+      background-size: 352px;
+    }
+    @include mq("phone") {
+      background-size: contain;
+      height: 300px;
+    }
+  }
 }
 
 .popular {
-	&__title {
-		margin-bottom: 60px;
-		@include mq("tablet-2") {
-			margin-bottom: 20px;
-		}
-		@include mq("tablet") {
-			font-size: 30px;
-		}
-		@include mq("phone-2") {
-			font-size: 24px;
-		}
-		@include mq("phone") {
-			margin-bottom: 24px;
-		}
-	}
+  &__title {
+    margin-bottom: 60px;
+    @include mq("tablet-2") {
+      margin-bottom: 20px;
+    }
+    @include mq("tablet") {
+      font-size: 30px;
+    }
+    @include mq("phone-2") {
+      font-size: 24px;
+    }
+    @include mq("phone") {
+      margin-bottom: 24px;
+    }
+  }
 
-	&__filter {
-		display: flex;
-		margin-bottom: 25px;
-		@include mq("desktop") {
-			white-space: nowrap;
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
-		}
-		@include mq("tablet-2") {
-			margin: 0 5px 30px;
-		}
-		@include mq("phone") {
-			padding: 0;
-		}
-	}
+  &__filter {
+    display: flex;
+    margin-bottom: 25px;
+    @include mq("desktop") {
+      white-space: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    @include mq("tablet-2") {
+      margin: 0 5px 30px;
+    }
+    @include mq("phone") {
+      padding: 0;
+    }
+  }
 
-	&__item-btn {
-		scroll-snap-align: start;
-		scroll-snap-stop: normal;
-		margin: 2px 28px 20px 0;
-		@include mq("tablet-2") {
-			margin: 2px 18px 18px 0;
-		}
-		@include mq("phone") {
-			margin: 2px 8px 0 0;
-		}
-	}
+  &__item-btn {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    margin: 2px 28px 20px 0;
+    @include mq("tablet-2") {
+      margin: 2px 18px 18px 0;
+    }
+    @include mq("phone") {
+      margin: 2px 8px 0 0;
+    }
+  }
 
-	&__btn {
-		padding: 23px 35px 23px 86px;
-		background-color: #ffffff;
-		box-shadow: 0 0 0 1px #ececec;
-		border-radius: 5px;
-		position: relative;
-		margin-left: 2px;
-		transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, fill 0.5s;
-		@include mq("tablet-2") {
-			padding: 21px 31px 21px 77px;
-		}
-		@include mq("tablet") {
-			font-size: 16px;
-			padding: 19px 28px 19px 69px;
-		}
-		@include mq("phone-2") {
-			font-size: 14px;
-			padding: 12px 15px 12px 41px;
-		}
+  &__btn {
+    padding: 23px 35px 23px 86px;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px #ececec;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 2px;
+    transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, fill 0.5s;
+    @include mq("tablet-2") {
+      padding: 21px 31px 21px 77px;
+    }
+    @include mq("tablet") {
+      font-size: 16px;
+      padding: 19px 28px 19px 69px;
+    }
+    @include mq("phone-2") {
+      font-size: 14px;
+      padding: 12px 15px 12px 41px;
+    }
 
-		&:hover {
-			color: $accent;
-			background-color: rgba(255, 122, 80, 0.1);
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
+    &:hover {
+      color: $accent;
+      background-color: rgba(255, 122, 80, 0.1);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
 
-		&:hover .popular__icon {
-			fill: $accent;
-		}
+    &:hover .popular__icon {
+      fill: $accent;
+    }
 
-		&:focus {
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
 
-		&:focus .popular__icon {
-			fill: $dark;
-		}
+    &:focus .popular__icon {
+      fill: $dark;
+    }
 
-		&:active {
-			color: $dark;
-			background-color: #fff;
-			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
-		}
+    &:active {
+      color: $dark;
+      background-color: #fff;
+      box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
+    }
 
-		&.mixitup-control-active {
-			background-color: $accent;
-			color: #fff;
-			transition: color 0.5s, fill 0.5s;
-			.popular__icon {
-				fill: #fff;
-			}
-		}
-	}
+    &.mixitup-control-active {
+      background-color: $accent;
+      color: #fff;
+      transition: color 0.5s, fill 0.5s;
+      .popular__icon {
+        fill: #fff;
+      }
+    }
+  }
 
-	&__icon {
-		display: inline;
-		width: 44px;
-		height: 44px;
-		position: absolute;
-		left: 32px;
-		bottom: 14px;
-		fill: $darkBlue-900;
-		transition: color 0.5s;
-		@include mq("tablet-2") {
-			width: 40px;
-			height: 40px;
-			left: 21px;
-			bottom: 12px;
-		}
-		@include mq("tablet") {
-			width: 36px;
-			height: 36px;
-			left: 21px;
-			bottom: 12px;
-		}
-		@include mq("phone-2") {
-			width: 20px;
-			height: 20px;
-			left: 12px;
-			bottom: 11px;
-		}
-	}
+  &__icon {
+    display: inline;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 32px;
+    bottom: 14px;
+    fill: $darkBlue-900;
+    transition: color 0.5s;
+    @include mq("tablet-2") {
+      width: 40px;
+      height: 40px;
+      left: 21px;
+      bottom: 12px;
+    }
+    @include mq("tablet") {
+      width: 36px;
+      height: 36px;
+      left: 21px;
+      bottom: 12px;
+    }
+    @include mq("phone-2") {
+      width: 20px;
+      height: 20px;
+      left: 12px;
+      bottom: 11px;
+    }
+  }
 
-	&__content {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, min(210px, 299px));
-		grid-gap: 30px;
-		justify-content: center;
-		align-items: stretch;
-		margin-bottom: 60px;
-		@include mq("tablet-2") {
-			grid-gap: 25px;
-			margin-bottom: 40px;
-		}
-		@include mq("tablet") {
-			grid-template-columns: repeat(auto-fill, 170px);
-			grid-gap: 15px;
-			margin-bottom: 20px;
-		}
-		@include mq("phone-2") {
-			grid-gap: 10px 5px;
-			margin-bottom: 34px;
-		}
-		@include mq("phone") {
-			grid-template-columns: repeat(auto-fill, 174px);
-		}
-	}
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(210px, 299px));
+    grid-gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 60px;
+    @include mq("tablet-2") {
+      grid-gap: 25px;
+      margin-bottom: 40px;
+    }
+    @include mq("tablet") {
+      grid-template-columns: repeat(auto-fill, 170px);
+      grid-gap: 15px;
+      margin-bottom: 20px;
+    }
+    @include mq("phone-2") {
+      grid-gap: 10px 5px;
+      margin-bottom: 34px;
+    }
+    @include mq("phone") {
+      grid-template-columns: repeat(auto-fill, 174px);
+    }
+  }
 
-	&__item {
-		background-color: #fff;
-		border-radius: 5px;
-		box-shadow: 0 0 0 1px #ececec;
-		transition: box-shadow 0.5s;
-		line-clamp: 2;
-		height: 299px;
+  &__item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #ececec;
+    transition: box-shadow 0.5s;
+    line-clamp: 2;
+    height: 299px;
 
-		&:hover {
-			box-shadow: 0 0 0 1px $accent;
-		}
-	}
+    &:hover {
+      box-shadow: 0 0 0 1px $accent;
+    }
+  }
 
-	&__more-link {
-		display: block;
-		font-size: 20px;
-		width: fit-content;
-		text-decoration: underline;
-		margin: 0 auto;
-	}
+  &__more-link {
+    display: block;
+    font-size: 20px;
+    width: fit-content;
+    text-decoration: underline;
+    margin: 0 auto;
+  }
 }
 
 .product-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	max-width: 210px;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	text-align: center;
-	padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 210px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px 15px;
   margin: 0 auto;
 
-	&__img {
-		max-width: 140px;
-		margin-bottom: 10px;
-	}
+  &__img {
+    max-width: 140px;
+    margin-bottom: 10px;
+  }
 
-	&__subtitle {
-		font-weight: 400;
-		font-size: 15px;
-		line-height: 1.2;
-		color: $dark;
-		margin-bottom: 10px;
-	}
+  &__subtitle {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $dark;
+    margin-bottom: 10px;
+  }
 
-	&__price {
-		font-weight: 500;
-		font-size: 15px;
-		line-height: 1.4;
-		color: $darkBlue-900;
-		margin-top: auto;
-		margin-bottom: 10px;
-	}
+  &__price {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+    color: $darkBlue-900;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
 
-	&__order-btn {
-		background-color: $accent;
-		font-size: 14px;
-		padding: 7px 16px;
-	}
+  &__order-btn {
+    background-color: $accent;
+    font-size: 14px;
+    padding: 7px 16px;
+  }
 }
 
 .features {
-	&__wrapp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 70px;
-		@include mq("desktop") {
-			padding: 0 50px;
-		}
-		@include mq("tablet-2") {
-			padding: 0 30px;
-		}
-		@include mq("tablet") {
-			justify-content: center;
-			position: relative;
-			height: 481px;
-		}
-		@include mq("phone") {
-			height: 381px;
-			padding: 0;
-		}
-	}
+  &__wrapp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    @include mq("desktop") {
+      padding: 0 50px;
+    }
+    @include mq("tablet-2") {
+      padding: 0 30px;
+    }
+    @include mq("tablet") {
+      justify-content: center;
+      position: relative;
+      height: 481px;
+    }
+    @include mq("phone") {
+      height: 381px;
+      padding: 0;
+    }
+  }
 
-	&__img-bg {
-		max-width: 440px;
-		width: 100%;
-		height: 585px;
-		background-size: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-		margin-right: 20px;
-		@include mq("tablet") {
-			max-width: 420px;
-			opacity: 0.2;
-		}
-	}
+  &__img-bg {
+    max-width: 440px;
+    width: 100%;
+    height: 585px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 20px;
+    @include mq("tablet") {
+      max-width: 420px;
+      opacity: 0.2;
+    }
+  }
 
-	&__content {
-		max-width: 470px;
-		width: 100%;
-		@include mq("tablet") {
-			position: absolute;
-		}
-	}
+  &__content {
+    max-width: 470px;
+    width: 100%;
+    @include mq("tablet") {
+      position: absolute;
+    }
+  }
 
-	&__title {
-		text-align: left;
-		margin-bottom: 30px;
-		@include mq("desktop") {
-			font-size: 30px;
-			margin-bottom: 25px;
-		}
-		@include mq("tablet") {
-			margin-bottom: 31px;
-		}
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+    @include mq("desktop") {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+    @include mq("tablet") {
+      margin-bottom: 31px;
+    }
 
-		@include mq("tablet-2") {
-			font-size: 24px;
-		}
-	}
+    @include mq("tablet-2") {
+      font-size: 24px;
+    }
+  }
 
-	&__title span {
-		display: block;
-	}
+  &__title span {
+    display: block;
+  }
 
-	&__text {
-		font-size: 20px;
-		line-height: 1.5;
-		margin-bottom: 30px;
-		@include mq("desktop") {
-			font-size: 18px;
-		}
-		@include mq("tablet-2") {
-			font-size: 16px;
-		}
-		@include mq("phone") {
-			margin-bottom: 35px;
-		}
-	}
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    @include mq("desktop") {
+      font-size: 18px;
+    }
+    @include mq("tablet-2") {
+      font-size: 16px;
+    }
+    @include mq("phone") {
+      margin-bottom: 35px;
+    }
+  }
 
-	&__list {
-		margin-bottom: 28px;
-	}
+  &__list {
+    margin-bottom: 28px;
+  }
 
-	&__item {
-		color: $darkBlue-900;
-		font-size: 24px;
-		line-height: 1.5;
-		padding-left: 64px;
-		margin-bottom: 20px;
-		position: relative;
-		cursor: pointer;
-		@include mq("desktop") {
-			font-size: 20px;
-			padding-left: 54px;
-		}
-		@include mq("tablet-2") {
-			font-size: 18px;
-			padding-left: 54px;
-		}
-		@include mq("tablet") {
-			padding-left: 47px;
-		}
+  &__item {
+    color: $darkBlue-900;
+    font-size: 24px;
+    line-height: 1.5;
+    padding-left: 64px;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    @include mq("desktop") {
+      font-size: 20px;
+      padding-left: 54px;
+    }
+    @include mq("tablet-2") {
+      font-size: 18px;
+      padding-left: 54px;
+    }
+    @include mq("tablet") {
+      padding-left: 47px;
+    }
 
-		&::before {
-			position: absolute;
-			content: "";
-			background-color: #ff2222;
-			mask-size: cover;
-			mask-position: center;
-			mask-repeat: no-repeat;
-			width: 34px;
-			height: 34px;
-			left: 0;
-			@include mq("tablet-2") {
-				bottom: 0;
-			}
-			@include mq("phone") {
-				left: 3px;
-				bottom: -7px;
-			}
-		}
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #ff2222;
+      mask-size: cover;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      width: 34px;
+      height: 34px;
+      left: 0;
+      @include mq("tablet-2") {
+        bottom: 0;
+      }
+      @include mq("phone") {
+        left: 3px;
+        bottom: -7px;
+      }
+    }
 
-		&:hover::before {
-			background-color: #00aaff;
-		}
+    &:hover::before {
+      background-color: #00aaff;
+    }
 
-		&--del::before {
-			mask-image: url("../images/sprite.svg#icon-timer");
-		}
+    &--del::before {
+      mask-image: url("../images/sprite.svg#icon-timer");
+    }
 
-		&--fast::before {
-			mask-image: url("../images/sprite.svg#icon-delivery");
-		}
+    &--fast::before {
+      mask-image: url("../images/sprite.svg#icon-delivery");
+    }
 
-		&--shops::before {
-			mask-image: url("../images/sprite.svg#icon-restorant");
-		}
-	}
+    &--shops::before {
+      mask-image: url("../images/sprite.svg#icon-restorant");
+    }
+  }
 
-	&__link {
-		display: inline-block;
-		color: #fff;
-		background-color: $accent;
-		letter-spacing: 0.03em;
-		padding: 12px 32px;
-		@include mq("tablet") {
-			font-size: 16px;
-		}
-		@include mq("phone-2") {
-			font-size: 14px;
-		}
-	}
+  &__link {
+    display: inline-block;
+    color: #fff;
+    background-color: $accent;
+    letter-spacing: 0.03em;
+    padding: 12px 32px;
+    @include mq("tablet") {
+      font-size: 16px;
+    }
+    @include mq("phone-2") {
+      font-size: 14px;
+    }
+  }
 }
 
 .restorants {
-	&__title {
-		margin-bottom: 45px;
-		@include mq("phone") {
-			margin-bottom: 33px;
-		}
-	}
+  &__title {
+    margin-bottom: 45px;
+    @include mq("phone") {
+      margin-bottom: 33px;
+    }
+  }
 
-	&__list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, min(370px));
-		justify-content: center;
-		grid-gap: 30px;
-		@include mq("tablet") {
-			display: block;
-			margin-right: 5px;
-			& .slick-slide {
-				overflow: hidden;
-				text-align: center;
-				margin: 0 10px 25px 0;
-			}
-			& .slick-dots {
-				display: flex;
-				justify-content: center;
-				font-size: 20px;
-			}
-			& .slick-dots li {
-				font-size: 20px;
-				background-color: $gray;
-				border-radius: 50%;
-				font-size: 0;
-				width: 15px;
-				height: 15px;
-				cursor: pointer;
-				&:not(:last-child) {
-					margin-right: 15px;
-				}
-				&.slick-active {
-					background-color: $accent;
-				}
-			}
-		}
-		@include mq("phone") {
-			& .slick-slide {
-				text-align: left;
-			}
-		}
-	}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(370px));
+    justify-content: center;
+    grid-gap: 30px;
+    @include mq("tablet") {
+      display: block;
+      margin-right: 5px;
+      & .slick-slide {
+        overflow: hidden;
+        text-align: center;
+        margin: 0 10px 25px 0;
+      }
+      & .slick-dots {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+      }
+      & .slick-dots li {
+        font-size: 20px;
+        background-color: $gray;
+        border-radius: 50%;
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+        &.slick-active {
+          background-color: $accent;
+        }
+      }
+    }
+    @include mq("phone") {
+      & .slick-slide {
+        text-align: left;
+      }
+    }
+  }
 
-	&__item {
-		display: flex;
-		flex-direction: column;
-		background-color: #fff;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-		border-radius: 10px;
-		max-width: 370px;
-		transition: box-shadow 0.5s, border-radius 0.5s;
-		@include mq("tablet") {
-			margin-bottom: 3px;
-		}
-		&:hover {
-			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
-			border-radius: 10px;
-			@include mq("tablet") {
-				box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
-			}
-		}
-	}
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 370px;
+    transition: box-shadow 0.5s, border-radius 0.5s;
+    @include mq("tablet") {
+      margin-bottom: 3px;
+    }
+    &:hover {
+      box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
+      border-radius: 10px;
+      @include mq("tablet") {
+        box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
+      }
+    }
+  }
 }
 
 .reviews {
-	@include mq("phone") {
-		padding: 0;
-	}
-	&__inner {
-		@include mq("tablet") {
-			display: flex;
-			flex-direction: column-reverse;
-		}
-	}
-	&__title {
-		margin-bottom: 45px;
-		@include mq("tablet-2") {
-			margin-bottom: 40px;
-		}
-		@include mq("tablet") {
-			margin-bottom: 35px;
-		}
-		@include mq("phone-2") {
-			margin-bottom: 30px;
-		}
-	}
+  @include mq("phone") {
+    padding: 0;
+  }
+  &__inner {
+    @include mq("tablet") {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+  &__title {
+    margin-bottom: 45px;
+    @include mq("tablet-2") {
+      margin-bottom: 40px;
+    }
+    @include mq("tablet") {
+      margin-bottom: 35px;
+    }
+    @include mq("phone-2") {
+      margin-bottom: 30px;
+    }
+  }
 
-	&__slider {
-		padding: 0 90px 0;
-		@include mq("desktop") {
-			padding: 0 70px 0;
-		}
-		@include mq("tablet") {
-			position: relative;
-			padding: 0;
-		}
+  &__slider {
+    padding: 0 90px 0;
+    @include mq("desktop") {
+      padding: 0 70px 0;
+    }
+    @include mq("tablet") {
+      position: relative;
+      padding: 0;
+    }
 
-		.slick-list {
-			margin-bottom: 41px;
-		}
-	}
+    .slick-list {
+      margin-bottom: 41px;
+    }
+  }
 
-	&__figure {
-		display: flex;
-		align-items: center;
-		@include mq("tablet-2") {
-			display: block;
-		}
-	}
+  &__figure {
+    display: flex;
+    align-items: center;
+    @include mq("tablet-2") {
+      display: block;
+    }
+  }
 
-	&__img {
-		border-radius: 50%;
-		margin-right: 40px;
-		@include mq("desktop") {
-			width: 260px;
-			height: 260px;
-		}
-		@include mq("tablet-2") {
-			margin: 0 auto 20px;
-		}
-		@include mq("tablet") {
-			width: 250px;
-			height: 250px;
-		}
-		@include mq("phone-2") {
-			width: 100px;
-			height: 100px;
-		}
-		@include mq("phone") {
-			margin-bottom: 26px;
-		}
-	}
+  &__img {
+    border-radius: 50%;
+    margin-right: 40px;
+    @include mq("desktop") {
+      width: 260px;
+      height: 260px;
+    }
+    @include mq("tablet-2") {
+      margin: 0 auto 20px;
+    }
+    @include mq("tablet") {
+      width: 250px;
+      height: 250px;
+    }
+    @include mq("phone-2") {
+      width: 100px;
+      height: 100px;
+    }
+    @include mq("phone") {
+      margin-bottom: 26px;
+    }
+  }
 
-	&__content {
-		max-width: 650px;
-		padding: 0 40px;
-		width: 100%;
-		@include mq("tablet-2") {
-			margin: 0 auto;
-		}
-		@include mq("phone") {
-			padding: 0 43px;
-		}
-	}
+  &__content {
+    max-width: 650px;
+    padding: 0 40px;
+    width: 100%;
+    @include mq("tablet-2") {
+      margin: 0 auto;
+    }
+    @include mq("phone") {
+      padding: 0 43px;
+    }
+  }
 
-	&__blockquote {
-		font-style: Italic;
-		font-size: 20px;
-		line-height: 1.5;
-		color: $dark;
-		margin-bottom: 30px;
-		position: relative;
-		@include mq("tablet-2") {
-			font-size: 18px;
-		}
-		@include mq("tablet") {
-			font-size: 16px;
-		}
-		@include mq("phone-2") {
-			font-size: 14px;
-		}
-		@include mq("phone") {
-			margin-bottom: 20px;
-		}
+  &__blockquote {
+    font-style: Italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $dark;
+    margin-bottom: 30px;
+    position: relative;
+    @include mq("tablet-2") {
+      font-size: 18px;
+    }
+    @include mq("tablet") {
+      font-size: 16px;
+    }
+    @include mq("phone-2") {
+      font-size: 14px;
+    }
+    @include mq("phone") {
+      margin-bottom: 20px;
+    }
 
-		&::before,
-		&::after {
-			position: absolute;
-			content: "";
-			background-image: url("../images/sprite.svg#icon-quote-open");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			filter: invert(82%) sepia(0%) saturate(1449%) hue-rotate(141deg)
-				brightness(98%) contrast(88%);
-			width: 24px;
-			height: 20px;
-		}
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("../images/sprite.svg#icon-quote-open");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: invert(82%) sepia(0%) saturate(1449%) hue-rotate(141deg)
+        brightness(98%) contrast(88%);
+      width: 24px;
+      height: 20px;
+    }
 
-		&::before {
-			left: -40px;
-		}
+    &::before {
+      left: -40px;
+    }
 
-		&::after {
-			transform: scale(-1, 1);
-			right: -40px;
-			bottom: 0;
-		}
-	}
+    &::after {
+      transform: scale(-1, 1);
+      right: -40px;
+      bottom: 0;
+    }
+  }
 
-	&__author {
-		display: block;
-		font-style: normal;
-		font-weight: 500;
-		font-size: 20px;
-		color: $accent;
-		@include mq("tablet-2") {
-			font-size: 18px;
-		}
-		@include mq("tablet") {
-			font-size: 16px;
-		}
-		& span {
-			display: block;
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 1.3;
-			color: $dark;
-			margin-top: 15px;
-		}
-	}
+  &__author {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: $accent;
+    @include mq("tablet-2") {
+      font-size: 18px;
+    }
+    @include mq("tablet") {
+      font-size: 16px;
+    }
+    & span {
+      display: block;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.3;
+      color: $dark;
+      margin-top: 15px;
+    }
+  }
 
-	&__slider-control {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		padding-bottom: 67px;
-		@include mq("tablet") {
-			position: relative;
-			padding: 0;
-		}
+  &__slider-control {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 67px;
+    @include mq("tablet") {
+      position: relative;
+      padding: 0;
+    }
 
-		& .slick-arrow {
-			background-color: rgba(255, 255, 255, 0.01);
-			box-shadow: 0 0 0 3px $gray;
-			border-radius: 50%;
-			border: 3px solid transparent;
-			fill: $gray;
-			padding: 5px 9px 0 10px;
-			transition: fill 0.5s, border 0.5s, box-shadow 0.5s, background-color 0.5s;
-			@include mq("tablet") {
-				position: absolute;
-				bottom: -130px;
-			}
-			@include mq("phone-2") {
-				bottom: -70px;
-			}
-			&:hover {
-				fill: #ffae94;
-				border-color: #ffae94;
-				background-color: #fff2ed;
-				border: 3px solid transparent;
-				box-shadow: 0 0 0 3px #ffae94;
-			}
+    & .slick-arrow {
+      background-color: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 3px $gray;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      fill: $gray;
+      padding: 5px 9px 0 10px;
+      transition: fill 0.5s, border 0.5s, box-shadow 0.5s, background-color 0.5s;
+      @include mq("tablet") {
+        position: absolute;
+        bottom: -130px;
+      }
+      @include mq("phone-2") {
+        bottom: -70px;
+      }
+      &:hover {
+        fill: #ffae94;
+        border-color: #ffae94;
+        background-color: #fff2ed;
+        border: 3px solid transparent;
+        box-shadow: 0 0 0 3px #ffae94;
+      }
 
-			&:focus {
-				fill: $gray;
-				background: rgba(255, 255, 255, 0.01);
-				border: 3px solid #c2c2c2;
-				box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-			}
+      &:focus {
+        fill: $gray;
+        background: rgba(255, 255, 255, 0.01);
+        border: 3px solid #c2c2c2;
+        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+      }
 
-			&:active {
-				fill: #ff7a50;
-				background-color: #ffae94;
-				box-shadow: none;
-				border: 3px solid transparent;
-			}
+      &:active {
+        fill: #ff7a50;
+        background-color: #ffae94;
+        box-shadow: none;
+        border: 3px solid transparent;
+      }
 
-			&.slick-disabled {
-				fill: $accent;
-				box-shadow: 0 0 0 3px $accent;
-				border: 3px solid transparent;
-			}
-		}
+      &.slick-disabled {
+        fill: $accent;
+        box-shadow: 0 0 0 3px $accent;
+        border: 3px solid transparent;
+      }
+    }
 
-		& .slick-next.slick-arrow {
-			right: 50px;
-			@include mq("phone-2") {
-				right: 70px;
-			}
-			@include mq("phone") {
-				right: 46px;
-			}
-		}
-		& .slick-prev.slick-arrow {
-			left: 50px;
-			@include mq("phone-2") {
-				left: 70px;
-			}
-			@include mq("phone") {
-				left: 39px;
-			}
-		}
+    & .slick-next.slick-arrow {
+      right: 50px;
+      @include mq("phone-2") {
+        right: 70px;
+      }
+      @include mq("phone") {
+        right: 46px;
+      }
+    }
+    & .slick-prev.slick-arrow {
+      left: 50px;
+      @include mq("phone-2") {
+        left: 70px;
+      }
+      @include mq("phone") {
+        left: 39px;
+      }
+    }
 
-		.slick-dots {
-			display: flex;
-			margin: 0 23px;
+    .slick-dots {
+      display: flex;
+      margin: 0 23px;
 
-			li {
-				button {
-					display: block;
-					font-size: 0;
-					width: 15px;
-					height: 15px;
-					background-color: $gray;
-					border-radius: 50%;
-					transition: fill 0.5s, border 0.5s, box-shadow 0.5s,
-						background-color 0.5s;
+      li {
+        button {
+          display: block;
+          font-size: 0;
+          width: 15px;
+          height: 15px;
+          background-color: $gray;
+          border-radius: 50%;
+          transition: fill 0.5s, border 0.5s, box-shadow 0.5s,
+            background-color 0.5s;
 
-					&:hover {
-						background-color: #fff2ed;
-						box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
-					}
+          &:hover {
+            background-color: #fff2ed;
+            box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+          }
 
-					&:focus {
-						box-shadow: 0 0 0 2px #ff6838;
-					}
+          &:focus {
+            box-shadow: 0 0 0 2px #ff6838;
+          }
 
-					&:active {
-						background-color: #ffae94;
-						box-shadow: none;
-					}
-				}
+          &:active {
+            background-color: #ffae94;
+            box-shadow: none;
+          }
+        }
 
-				&.slick-active button {
-					background-color: $accent;
+        &.slick-active button {
+          background-color: $accent;
 
-					&:hover {
-						background-color: #fff2ed;
-						box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
-					}
+          &:hover {
+            background-color: #fff2ed;
+            box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+          }
 
-					&:active {
-						background-color: #ffae94;
-						box-shadow: none;
-					}
+          &:active {
+            background-color: #ffae94;
+            box-shadow: none;
+          }
 
-					&:focus {
-						box-shadow: 0 0 0 2px #ff6838;
-					}
-				}
+          &:focus {
+            box-shadow: 0 0 0 2px #ff6838;
+          }
+        }
 
-				&:not(:last-child) {
-					margin-right: 15px;
-				}
-			}
-		}
-	}
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
 
-	&__dots {
-		display: flex;
-		align-items: center;
-	}
+  &__dots {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .app {
-	&__wrapp {
-		display: flex;
-		align-items: center;
-		margin-bottom: 124px;
-		@include mq("desktop") {
-			margin-bottom: 90px;
-		}
-		@include mq("tablet-2") {
-			margin-bottom: 70px;
-		}
-		@include mq("tablet") {
-			position: relative;
-			justify-content: center;
-			margin-bottom: 50px;
-		}
-		@include mq("phone") {
-			margin-bottom: 43px;
-		}
-	}
+  &__wrapp {
+    display: flex;
+    align-items: center;
+    margin-bottom: 124px;
+    @include mq("desktop") {
+      margin-bottom: 90px;
+    }
+    @include mq("tablet-2") {
+      margin-bottom: 70px;
+    }
+    @include mq("tablet") {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    @include mq("phone") {
+      margin-bottom: 43px;
+    }
+  }
 
-	&__bg-wrapp {
-		max-width: 570px;
-		width: 100%;
-		height: 370px;
-		background-position: left;
-		background-repeat: no-repeat;
-		@include mq("tablet") {
-			position: absolute;
-			height: 100%;
-			opacity: 0.2;
-		}
-		@include mq("phone-2") {
-			opacity: 0;
-		}
-	}
+  &__bg-wrapp {
+    max-width: 570px;
+    width: 100%;
+    height: 370px;
+    background-position: left;
+    background-repeat: no-repeat;
+    @include mq("tablet") {
+      position: absolute;
+      height: 100%;
+      opacity: 0.2;
+    }
+    @include mq("phone-2") {
+      opacity: 0;
+    }
+  }
 
-	&__content {
-		max-width: 540px;
-		width: 100%;
-		padding: 40px 0;
-		@include mq("tablet-2") {
-			z-index: 2;
-		}
-		@include mq("phone") {
-			padding: 0;
-		}
-		& p {
-			font-size: 20px;
-			line-height: 1.5;
-			margin-bottom: 30px;
-			@include mq("tablet-2") {
-				font-size: 18px;
-			}
-			@include mq("tablet") {
-				font-size: 16px;
-			}
-			@include mq("phone-2") {
-				font-size: 14px;
-			}
-			@include mq("phone") {
-				margin-bottom: 15px;
-			}
-		}
-	}
+  &__content {
+    max-width: 540px;
+    width: 100%;
+    padding: 40px 0;
+    @include mq("tablet-2") {
+      z-index: 2;
+    }
+    @include mq("phone") {
+      padding: 0;
+    }
+    & p {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      @include mq("tablet-2") {
+        font-size: 18px;
+      }
+      @include mq("tablet") {
+        font-size: 16px;
+      }
+      @include mq("phone-2") {
+        font-size: 14px;
+      }
+      @include mq("phone") {
+        margin-bottom: 15px;
+      }
+    }
+  }
 
-	&__title {
-		text-align: left;
-		margin-bottom: 45px;
-		@include mq("tablet-2") {
-			margin-bottom: 40px;
-		}
-		@include mq("tablet") {
-			margin-bottom: 35px;
-		}
-		@include mq("phone-2") {
-			margin-bottom: 30px;
-		}
-		@include mq("phone") {
-			margin-bottom: 9px;
-		}
-	}
+  &__title {
+    text-align: left;
+    margin-bottom: 45px;
+    @include mq("tablet-2") {
+      margin-bottom: 40px;
+    }
+    @include mq("tablet") {
+      margin-bottom: 35px;
+    }
+    @include mq("phone-2") {
+      margin-bottom: 30px;
+    }
+    @include mq("phone") {
+      margin-bottom: 9px;
+    }
+  }
 
-	&__list {
-		display: flex;
-	}
+  &__list {
+    display: flex;
+  }
 
-	&__item {
-		&:not(:last-child) {
-			margin-right: 30px;
-		}
-	}
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
-.offers{
+.offers {
   padding-bottom: 120px;
-  &__title{
-    text-align-last: left;
+  @include mq("tablet-2"){
+    padding-bottom: 100px;
+  }
+  @include mq("tablet"){
+    padding-bottom: 80px;
+  }
+  @include mq("phone-2"){
+    padding-bottom: 50px;
+  }
+  @include mq("phone"){
+    padding-bottom: 30px;
+  }
+  &__title {
+    text-align: left;
     margin-bottom: 60px;
+    @include mq("phone"){
+      text-align: center;
+      margin-bottom: 40px;
+    }
   }
   &__list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, min(370px));
-		justify-content: center;
-		grid-gap: 30px;
-		@include mq("tablet") {
-			display: block;
-			margin-right: 5px;
-			& .slick-slide {
-				overflow: hidden;
-				text-align: center;
-				margin: 0 10px 25px 0;
-			}
-			& .slick-dots {
-				display: flex;
-				justify-content: center;
-				font-size: 20px;
-			}
-			& .slick-dots li {
-				font-size: 20px;
-				background-color: $gray;
-				border-radius: 50%;
-				font-size: 0;
-				width: 15px;
-				height: 15px;
-				cursor: pointer;
-				&:not(:last-child) {
-					margin-right: 15px;
-				}
-				&.slick-active {
-					background-color: $accent;
-				}
-			}
-		}
-		@include mq("phone") {
-			& .slick-slide {
-				text-align: left;
-			}
-		}
-	}
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(370px));
+    justify-content: center;
+    grid-gap: 30px;
+    @include mq("tablet") {
+      display: block;
+      margin-right: 5px;
+      & .slick-slide {
+        overflow: hidden;
+        text-align: center;
+        margin: 0 10px 25px 0;
+      }
+      & .slick-dots {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+      }
+      & .slick-dots li {
+        font-size: 20px;
+        background-color: $gray;
+        border-radius: 50%;
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+        &.slick-active {
+          background-color: $accent;
+        }
+      }
+    }
+    @include mq("phone") {
+      & .slick-slide {
+        text-align: left;
+      }
+    }
+  }
 
-	&__item {
-		display: flex;
-		flex-direction: column;
-		background-color: #fff;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-		border-radius: 10px;
-		max-width: 370px;
-		transition: box-shadow 0.5s, border-radius 0.5s;
-		@include mq("tablet") {
-			margin-bottom: 3px;
-		}
-		&:hover {
-			box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
-			border-radius: 10px;
-			@include mq("tablet") {
-				box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
-			}
-		}
-	}
-  &__card-wrapp{
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 370px;
+    transition: box-shadow 0.5s, border-radius 0.5s;
+    @include mq("tablet") {
+      margin-bottom: 3px;
+    }
+    &:hover {
+      box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
+      border-radius: 10px;
+      @include mq("tablet") {
+        box-shadow: 0 3px 3px rgba(255, 104, 56, 0.5);
+      }
+    }
+  }
+  &__card-wrapp {
     padding: 15px 20px;
+    & p {
+      @include mq("tablet") {
+        font-size: 18px;
+      }
+      @include mq("phone-2") {
+        font-size: 24px;
+      }
+    }
   }
 }
 
 .footer-top {
-	display: flex;
-	margin-bottom: 57px;
-	@include mq("tablet-2") {
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-	@include mq("phone-2") {
-		flex-direction: column;
-	}
+  display: flex;
+  margin-bottom: 57px;
+  @include mq("tablet-2") {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  @include mq("phone-2") {
+    flex-direction: column;
+  }
 
-	&__block {
-		max-width: 200px;
-		width: 100%;
-		margin-right: 70px;
-		@include mq("tablet-2") {
-			margin: 0 0 30px 0;
-		}
-	}
+  &__block {
+    max-width: 200px;
+    width: 100%;
+    margin-right: 70px;
+    @include mq("tablet-2") {
+      margin: 0 0 30px 0;
+    }
+  }
 
-	&__logo {
-		display: block;
-		width: fit-content;
-		margin-bottom: 26px;
-		@include mq("phone") {
-			margin: 0 0 27px 0;
-		}
-	}
+  &__logo {
+    display: block;
+    width: fit-content;
+    margin-bottom: 26px;
+    @include mq("phone") {
+      margin: 0 0 27px 0;
+    }
+  }
 
-	&__block-nav {
-		margin-right: 47px;
-		@include mq("tablet-2") {
-			order: 3;
-			margin-right: 0;
-		}
-	}
+  &__block-nav {
+    margin-right: 47px;
+    @include mq("tablet-2") {
+      order: 3;
+      margin-right: 0;
+    }
+  }
 
-	&__list {
-		column-count: 3;
-		@include mq("desktop") {
-			column-count: 2;
-		}
-		@include mq("tablet-2") {
-			column-count: 3;
-		}
-		@include mq("phone-2") {
-			column-count: 1;
-		}
-	}
+  &__list {
+    column-count: 3;
+    @include mq("desktop") {
+      column-count: 2;
+    }
+    @include mq("tablet-2") {
+      column-count: 3;
+    }
+    @include mq("phone-2") {
+      column-count: 1;
+    }
+  }
 
-	&__item {
-		margin-bottom: 20px;
-	}
+  &__item {
+    margin-bottom: 20px;
+  }
 
-	&__link {
-		font-size: 18px;
-		line-height: 1.3;
-		letter-spacing: 0.01em;
-		color: #31352b;
-	}
+  &__link {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: #31352b;
+  }
 
-	&__block-address {
-		max-width: 195px;
-		width: 100%;
-		@include mq("phone-2") {
-			margin-bottom: 30px;
-		}
-	}
+  &__block-address {
+    max-width: 195px;
+    width: 100%;
+    @include mq("phone-2") {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .social {
-	display: flex;
+  display: flex;
 
-	&__item {
-		background-color: $silver-200;
-		border-radius: 50%;
-		transition: background-color 0.5s, box-shadow 0.5s;
+  &__item {
+    background-color: $silver-200;
+    border-radius: 50%;
+    transition: background-color 0.5s, box-shadow 0.5s;
 
-		&:not(:last-child) {
-			margin-right: 13px;
-		}
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
 
-		&:hover {
-			background-color: #ff7a50;
-		}
+    &:hover {
+      background-color: #ff7a50;
+    }
 
-		&:focus {
-			background-color: #fff2ed;
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
+    &:focus {
+      background-color: #fff2ed;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
 
-		&:active {
-			background-color: #fff2ed;
-		}
-	}
+    &:active {
+      background-color: #fff2ed;
+    }
+  }
 
-	&__link {
-		background-color: $dark;
-		display: block;
-		width: 39px;
-		height: 39px;
-		mask-position: center;
-		mask-repeat: no-repeat;
-		transition: background-color 0.3s ease-in-out;
+  &__link {
+    background-color: $dark;
+    display: block;
+    width: 39px;
+    height: 39px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    transition: background-color 0.3s ease-in-out;
 
-		&:hover {
-			background-color: #fff;
-		}
+    &:hover {
+      background-color: #fff;
+    }
 
-		&:focus {
-			background-color: $dark;
-		}
+    &:focus {
+      background-color: $dark;
+    }
 
-		&:active {
-			background-color: #ff7a50;
-		}
-	}
+    &:active {
+      background-color: #ff7a50;
+    }
+  }
 }
 
 .form {
-	&__input {
-		display: block;
-		width: 100%;
-		background-color: #ffffff;
-		border: 1px solid #c2c2c2;
-		border-radius: 5px;
-		padding: 13px 13px 13px 15px;
-		margin-bottom: 12px;
-		transition: box-shadow 0.5s, border 0.5s, border-radius 0.5s, color 0.5s;
+  &__input {
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    padding: 13px 13px 13px 15px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.5s, border 0.5s, border-radius 0.5s, color 0.5s;
 
-		&:hover {
-			color: $darkBlue-900;
-		}
+    &:hover {
+      color: $darkBlue-900;
+    }
 
-		&:focus {
-			border: 1px solid $accent;
-		}
+    &:focus {
+      border: 1px solid $accent;
+    }
 
-		&::placeholder {
-			font-size: 14px;
-			color: #c2c2c2;
-			opacity: 0.9;
-			transition: color 0.5s;
-		}
+    &::placeholder {
+      font-size: 14px;
+      color: #c2c2c2;
+      opacity: 0.9;
+      transition: color 0.5s;
+    }
 
-		&:hover::placeholder {
-			color: $darkBlue-900;
-		}
-	}
+    &:hover::placeholder {
+      color: $darkBlue-900;
+    }
+  }
 
-	&__btn {
-		display: block;
-		width: 100%;
-		font-size: 14px;
-		padding: 13px 38px 13px 69px;
-		position: relative;
+  &__btn {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 13px 38px 13px 69px;
+    position: relative;
 
-		&:hover {
-			color: $accent;
-			background-color: rgba(255, 122, 80, 0.1);
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
+    &:hover {
+      color: $accent;
+      background-color: rgba(255, 122, 80, 0.1);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
 
-		&:hover .form__icon {
-			fill: $accent;
-		}
+    &:hover .form__icon {
+      fill: $accent;
+    }
 
-		&:focus {
-			color: $accent;
-			background-color: #fff;
-			box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-		}
+    &:focus {
+      color: $accent;
+      background-color: #fff;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
 
-		&:focus .form__icon {
-			fill: $accent;
-		}
-	}
+    &:focus .form__icon {
+      fill: $accent;
+    }
+  }
 
-	&__icon {
-		position: absolute;
-		fill: #fff;
-		left: 39px;
-		width: 17px;
-		height: 16px;
-	}
+  &__icon {
+    position: absolute;
+    fill: #fff;
+    left: 39px;
+    width: 17px;
+    height: 16px;
+  }
 }
 
 .address {
-	&__link {
-		display: block;
-		font-weight: 400;
-		font-style: normal;
-		font-size: 16px;
-		line-height: 32px;
-		color: $dark;
-		width: 100%;
-		margin-bottom: 15px;
-		position: relative;
-		padding-left: 31px;
+  &__link {
+    display: block;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 32px;
+    color: $dark;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 31px;
 
-		&::before {
-			position: absolute;
-			content: "";
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 20px;
-			height: 19px;
-			left: 0;
-			bottom: 6px;
-		}
+    &::before {
+      position: absolute;
+      content: "";
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 19px;
+      left: 0;
+      bottom: 6px;
+    }
 
-		&--loc {
-			&::before {
-				background-image: url("../images/icons/icon-location.svg");
-				width: 16px;
-			}
-		}
+    &--loc {
+      &::before {
+        background-image: url("../images/icons/icon-location.svg");
+        width: 16px;
+      }
+    }
 
-		&--tel {
-			&::before {
-				background-image: url("../images/icons/icon-call.svg");
-			}
-		}
+    &--tel {
+      &::before {
+        background-image: url("../images/icons/icon-call.svg");
+      }
+    }
 
-		&--mess {
-			&::before {
-				background-image: url("../images/icons/icon-message.svg");
-			}
-		}
-	}
+    &--mess {
+      &::before {
+        background-image: url("../images/icons/icon-message.svg");
+      }
+    }
+  }
 }
 
 .footer-bottom {
-	border-top: 1px solid rgba(194, 194, 194, 0.2);
-	text-align: center;
+  border-top: 1px solid rgba(194, 194, 194, 0.2);
+  text-align: center;
 
-	&__copy {
-		display: block;
-		color: $dark;
-		font-size: 14px;
-		line-height: 1;
-		padding: 30px 0;
-		@include mq("phone-2") {
-			padding: 20px 0;
-			background-color: #fff;
-		}
-	}
+  &__copy {
+    display: block;
+    color: $dark;
+    font-size: 14px;
+    line-height: 1;
+    padding: 30px 0;
+    @include mq("phone-2") {
+      padding: 20px 0;
+      background-color: #fff;
+    }
+  }
 }
-
