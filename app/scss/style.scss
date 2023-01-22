@@ -382,6 +382,9 @@
     }
   }
   &__filter {
+    & .close{
+      display: none;
+    }
     @include mq("tablet") {
       position: fixed;
       display: block;
@@ -401,14 +404,18 @@
       transform: translateX(0%);
       & .close {
         position: absolute;
+        display: block;
         top: 9px;
         right: 9px;
       }
     }
   }
   &__filter-wrapp {
-    width: 270px;
-    padding-top: 80px;
+    @include mq("tablet"){
+
+      width: 270px;
+      padding-top: 80px;
+    }
   }
   &__list {
     display: grid;
