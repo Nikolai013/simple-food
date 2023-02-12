@@ -1,0 +1,139 @@
+@include('components/_head.html')
+
+@include('components/_header.html')
+
+<main class="main">
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href=".html">Главная</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href="catalog.html">Каталог товаров</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link">Товар</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <section class="product">
+    <div class="container">
+      <div class="product__wrapp">
+        <div class="swiper product__gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="product__img" src="../images/food-cart/gallery.jpg" width="610" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="product__img" src="../images/food-cart/gallery.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="product__info">
+          <h1 class="product__title">Чизбургер с листьями салата</h1>
+          <div class="stars product__stars" data-rateyo-rating="4"></div>
+          <span class="product__price">160 грн.</span>
+          <div class="product__box-quantity">
+            <div class="product__input-box">
+              <span class="product__input-minus dis product__spiner">-</span>
+              <input class="product__input" type="text" value="1" readonly="">
+              <span class="product__input-plus product__spiner">+</span>
+            </div>
+            <buttnon class="product__btn-cart">Добавить в корзину</buttnon>
+          </div>
+          <h2 class="product__title-delivery">Доставка и оплата</h2>
+          <div class="product__box-text">
+            <p class="product__text">
+              Минимальная сумма заказа — 160 грн.
+            </p>
+            <p class="product__text">
+              Время доставки заказа — 80-140 мин.
+            </p>
+            <p class="product__text">
+              Оплата осуществляется только банковской картой.
+            </p>
+            <p class="product__text">
+              Окончательная сумма заказа формируется после сбора товаров.
+            </p>
+          </div>
+          <a class="product__link-more animation" href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="product__description">
+        <ul class="product__tab-top">
+          <li class="product__tab-item">
+            <button class="product__tab-btn product__tab-btn--active" type="button"
+                    data-filter=".tab-description">Описание</button>
+          </li>
+          <li class="product__tab-item">
+            <button class="product__tab-btn" type="button" data-filter=".tab-feature">Характеристики</button>
+          </li>
+          <li class="product__tab-item">
+            <button class="product__tab-btn" type="button" data-filter=".tab-reviews">Отзывы (2)</button>
+          </li>
+        </ul>
+        <div class="product__tab-content">
+          <div class="product__tab-description mix tab-description">
+            <p>
+              Рубленый бифштекс из натуральной говядины на карамелизованной булочке, с ломтиком сыра «Чеддер», кетчупом,
+              горчицей,
+              луком и маринованными огурчиками.
+            </p>
+            <p>Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо, следы кунжута
+            </p>
+            <p>Внешний вид товара может отличаться от изображений, представленных на сайте.
+            </p>
+          </div>
+          <div class="product__tab-feature mix tab-feature">
+            Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо, следы кунжута
+          </div>
+          <div class="product__tab-reviews mix tab-reviews">
+            <h3>Мнения наших клиентов</h3>
+            <div class="comments">
+              <div class="comments__content-top">
+                <img class="comments__img" src="images/avatar/avatar-test.jpg" alt="фото автора отзыва">
+                <div class="comments__author">
+                  <span class="comments__name">Андрей</span>
+                  <span class="comments__date">10.06.2021</span>
+                </div>
+                <div class="stars comments__stars" data-rateyo-rating="4"></div>
+              </div>
+              <p>Доставили быстро. Товар свежий и очень вкусный, буду пробовать еще!))</p>
+            </div>
+            <div class="comments">
+              <div class="comments__content-top">
+                <img class="comments__img" src="images/avatar/avatar-test.jpg" alt="фото автора отзыва">
+                <div class="comments__author">
+                  <span class="comments__name">Екатерина Белая</span>
+                  <span class="comments__date">7.06.2021</span>
+                </div>
+                <div class="stars comments__stars" data-rateyo-rating="4"></div>
+              </div>
+              <p>этот бургер неплохой чтобы перекусить, когда нет возможности или времени что-нибудь приготовить. Это
+                отличный вариант,
+                чтобы съесть на ходу, но чтобы побаловать себя, я больше предпочту пиццу</p>
+            </div>
+            <div class="add-review">
+              <h4 class="add-review__title">Оставить отзыв</h4>
+              <span class="add-review__rate">
+                Ваша оценка *
+                <div class="add-review__stars" data-rateyo-rating="0"></div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')
